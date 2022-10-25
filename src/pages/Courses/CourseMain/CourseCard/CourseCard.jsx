@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const CourseCard = ({ course, course: { img_url, title, price } }) => {
+const CourseCard = ({ course, course: { _id, img_url, title, price } }) => {
   console.log(
     "🚀 ~ file: CourseCard.jsx ~ line 4 ~ CourseCard ~ course",
     course
@@ -99,6 +100,9 @@ const CourseCard = ({ course, course: { img_url, title, price } }) => {
           </svg>
 
           <h1 class="px-2 text-sm">patterson@example.com</h1>
+          <button>
+            <Link to={`/course/${_id}`}> View Course</Link>
+          </button>
         </div>
       </div>
     </div>
