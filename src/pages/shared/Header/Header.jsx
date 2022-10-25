@@ -161,7 +161,7 @@ const Header = () => {
                   {/* <!-- this hidden checkbox controls the state --> */}
                   <input
                     type="checkbox"
-                    data-toggle-theme="dark,light"
+                    data-toggle-theme="light,night"
                     data-act-class="ACTIVECLASS"
                   />
 

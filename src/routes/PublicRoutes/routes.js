@@ -7,6 +7,7 @@ import Checkout from "../../pages/Checkout/Checkout";
 import CourseDetails from "../../pages/Courses/CourseDetails/CourseDetails";
 import Courses from "../../pages/Courses/Courses";
 import ErrorPage from "../../pages/ErrorPage/ErrorPage";
+import FAQ from "../../pages/FAQ/FAQ";
 import Home from "../../pages/Home/Home";
 import PrivateRoute from "../PrivateRoutes/PrivateRoute";
 
@@ -56,6 +57,10 @@ export const routes = createBrowserRouter([
             <Checkout></Checkout>
           </PrivateRoute>
         ),
+      },
+      {
+        path: "/faq",
+        element: <FAQ></FAQ>,
       },
     ],
   },
