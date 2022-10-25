@@ -10,7 +10,7 @@ const CourseSideNav = () => {
       <h1>Course Side Nav</h1>
       <div className="min-h-full flex flex-col gap-5 justify-center items-center">
         {courses.map((course) => (
-          <Link>{course.title}</Link>
+          <Link key={course._id}>{course.title}</Link>
         ))}
       </div>
     </div>

@@ -3,6 +3,7 @@ import CoursesProvider from "../../context/CoursesProvider/CoursesProvider";
 import Main from "../../layouts/Main/Main";
 import Login from "../../pages/Authentication/Login";
 import Register from "../../pages/Authentication/Register";
+import Checkout from "../../pages/Checkout/Checkout";
 import CourseDetails from "../../pages/Courses/CourseDetails/CourseDetails";
 import Courses from "../../pages/Courses/Courses";
 import ErrorPage from "../../pages/ErrorPage/ErrorPage";
@@ -45,6 +46,10 @@ export const routes = createBrowserRouter([
           );
         },
         element: <CourseDetails></CourseDetails>,
+      },
+      {
+        path: "/checkout",
+        element: <Checkout></Checkout>,
       },
     ],
   },
