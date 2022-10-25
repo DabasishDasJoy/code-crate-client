@@ -1,5 +1,6 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import { themeChange } from "theme-change";
 import { AuthContext } from "../../../context/AuthProvider/AuthProvider";
 
 const Header = () => {
@@ -11,6 +12,11 @@ const Header = () => {
       .then(() => {})
       .catch((err) => console.error(err));
   };
+
+  useEffect(() => {
+    themeChange(false);
+    // 👆 false parameter is required for react project
+  }, []);
 
   return (
     <nav className="relative bg-white shadow dark:bg-gray-800">
@@ -153,7 +159,11 @@ const Header = () => {
               <div className="lg:flex sm:hidden items-center mt-4 lg:mt-0 gap-2">
                 <label className="swap swap-rotate">
                   {/* <!-- this hidden checkbox controls the state --> */}
-                  <input type="checkbox" />
+                  <input
+                    data-toggle-theme="dark,light"
+                    data-act-class="ACTIVECLASS"
+                    type="checkbox"
+                  />
 
                   {/* <!-- sun icon --> */}
                   <svg
