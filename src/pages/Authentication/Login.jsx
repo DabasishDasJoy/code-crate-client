@@ -1,18 +1,20 @@
 import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 
 const Login = () => {
   const { login } = useContext(AuthContext);
   const { register, handleSubmit } = useForm({});
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
   const onSubmit = (d) => {
     login(d.email, d.password)
       .then((res) => {
         console.log(res.user);
-        navigate("/");
+        navigate(from, { replace: true });
       })
       .catch((err) => console.error(err));
   };
@@ -20,7 +22,7 @@ const Login = () => {
   return (
     <div className="flex items-center">
       <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 mx-auto">
-        <h2 class="text-2xl text-center font-semibold text-gray-700 dark:text-white">
+        <h2 className="text-2xl text-center font-semibold text-gray-700 dark:text-white">
           Sign In
         </h2>
         <form onSubmit={handleSubmit(onSubmit)} className="card-body">

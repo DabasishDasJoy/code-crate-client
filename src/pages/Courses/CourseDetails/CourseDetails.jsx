@@ -15,9 +15,10 @@ const CourseDetails = () => {
       </div>
       <button>Download</button>
       <h1 ref={ref}>Course title: {course.title}</h1>
-      <Link to={"/checkout"}>
-        <button>Get premium access</button>
-      </Link>
+
+      <button>
+        <Link to={"/checkout"}>Get premium access</Link>
+      </button>
     </div>
   );
 };
