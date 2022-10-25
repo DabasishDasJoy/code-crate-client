@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { CoursesContext } from "../../../../context/CoursesProvider/CoursesProvider";
 
 const CourseCard = ({ course, course: { _id, img_url, title, price } }) => {
+  const { setSelectedCourse } = useContext(CoursesContext);
   return (
     <div className="w-full max-w-sm overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
       <img
@@ -96,7 +98,7 @@ const CourseCard = ({ course, course: { _id, img_url, title, price } }) => {
           </svg>
 
           <h1 className="px-2 text-sm">patterson@example.com</h1>
-          <button>
+          <button onClick={() => setSelectedCourse(course)}>
             <Link to={`/course/${_id}`}> View Course</Link>
           </button>
         </div>

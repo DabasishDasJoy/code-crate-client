@@ -13,7 +13,14 @@ import PrivateRoute from "../PrivateRoutes/PrivateRoute";
 export const routes = createBrowserRouter([
   {
     path: "/",
-    element: <Main></Main>,
+    loader: () => {
+      return fetch("https://code-crate-server.vercel.app/courses");
+    },
+    element: (
+      <CoursesProvider>
+        <Main></Main>
+      </CoursesProvider>
+    ),
     errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
@@ -22,14 +29,8 @@ export const routes = createBrowserRouter([
       },
       {
         path: "/courses",
-        loader: () => {
-          return fetch("https://code-crate-server.vercel.app/courses");
-        },
-        element: (
-          <CoursesProvider>
-            <Courses></Courses>
-          </CoursesProvider>
-        ),
+
+        element: <Courses></Courses>,
       },
       {
         path: "/login",
