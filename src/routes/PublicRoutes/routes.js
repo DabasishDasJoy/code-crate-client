@@ -24,7 +24,7 @@ export const routes = createBrowserRouter([
         },
         element: (
           <CoursesProvider>
-            <Courses />
+            <Courses></Courses>
           </CoursesProvider>
         ),
       },
