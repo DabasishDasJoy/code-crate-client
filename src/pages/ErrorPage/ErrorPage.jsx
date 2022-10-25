@@ -25,7 +25,7 @@ const ErrorPage = () => {
       </p>
 
       <Link to={"/"}>
-        <button className="btn mt-10 text-white bg-[#0D5EF4] flex gap-2">
+        <button className="btn mt-10 border-none text-white bg-[#0D5EF4] flex gap-2">
           <FaHome /> Back to Home
         </button>
       </Link>
