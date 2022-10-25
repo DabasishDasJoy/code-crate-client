@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import CoursesProvider from "../../context/CoursesProvider/CoursesProvider";
 import Main from "../../layouts/Main/Main";
 import Login from "../../pages/Authentication/Login";
 import Register from "../../pages/Authentication/Register";
@@ -18,7 +19,14 @@ export const routes = createBrowserRouter([
       },
       {
         path: "/courses",
-        element: <Courses></Courses>,
+        loader: () => {
+          return fetch("https://code-crate-server.vercel.app/courses");
+        },
+        element: (
+          <CoursesProvider>
+            <Courses />
+          </CoursesProvider>
+        ),
       },
       {
         path: "/login",
