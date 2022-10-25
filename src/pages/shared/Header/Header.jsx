@@ -160,9 +160,9 @@ const Header = () => {
                 <label className="swap swap-rotate">
                   {/* <!-- this hidden checkbox controls the state --> */}
                   <input
+                    type="checkbox"
                     data-toggle-theme="dark,light"
                     data-act-class="ACTIVECLASS"
-                    type="checkbox"
                   />
 
                   {/* <!-- sun icon --> */}
