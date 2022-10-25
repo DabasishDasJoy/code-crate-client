@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 
 const Register = () => {
-  const { user, login } = useContext(AuthContext);
-
+  const { createUser } = useContext(AuthContext);
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -15,9 +15,10 @@ const Register = () => {
   } = useForm({});
 
   const onSubmit = (d) => {
-    login(d.email, d.password)
+    createUser(d.email, d.password)
       .then((res) => {
         console.log(res.user);
+        navigate("/");
       })
       .catch((err) => console.error(err));
   };

@@ -1,9 +1,17 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
+import { AuthContext } from "../../../context/AuthProvider/AuthProvider";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  console.log("🚀 ~ file: Header.jsx ~ line 5 ~ Header ~ isOpen", isOpen);
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogout = () => {
+    logOut()
+      .then(() => {})
+      .catch((err) => console.error(err));
+  };
+
   return (
     <nav className="relative bg-white shadow dark:bg-gray-800">
       <div className="container px-6 py-4 mx-auto">
@@ -127,12 +135,21 @@ const Header = () => {
               >
                 Blog
               </NavLink>
-              <NavLink
-                to={"/login"}
-                className="px-3 py-2 mx-3 mt-2 text-gray-700 transition-colors duration-300 transform rounded-md lg:mt-0 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
-              >
-                Login
-              </NavLink>
+              {user && user.uid ? (
+                <button
+                  onClick={handleLogout}
+                  className="px-3 py-2 mx-3 mt-2 text-gray-700 transition-colors duration-300 transform rounded-md lg:mt-0 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                >
+                  Logout
+                </button>
+              ) : (
+                <NavLink
+                  to={"/login"}
+                  className="px-3 py-2 mx-3 mt-2 text-gray-700 transition-colors duration-300 transform rounded-md lg:mt-0 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                >
+                  Login
+                </NavLink>
+              )}
               <div className="lg:flex sm:hidden items-center mt-4 lg:mt-0 gap-2">
                 <label className="swap swap-rotate">
                   {/* <!-- this hidden checkbox controls the state --> */}
@@ -157,19 +174,21 @@ const Header = () => {
                   </svg>
                 </label>
 
-                <button
-                  type="button"
-                  className="flex items-center focus:outline-none"
-                  aria-label="toggle profile dropdown"
-                >
-                  <div className="w-8 h-8 overflow-hidden border-2 border-gray-400 rounded-full">
-                    <img
-                      src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
-                      className="object-cover w-full h-full"
-                      alt="avatar"
-                    />
-                  </div>
-                </button>
+                {user && user.uid && (
+                  <button
+                    type="button"
+                    className="flex items-center focus:outline-none"
+                    aria-label="toggle profile dropdown"
+                  >
+                    <div className="w-8 h-8 overflow-hidden border-2 border-gray-400 rounded-full">
+                      <img
+                        src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
+                        className="object-cover w-full h-full"
+                        alt="avatar"
+                      />
+                    </div>
+                  </button>
+                )}
               </div>
             </div>
           </div>
