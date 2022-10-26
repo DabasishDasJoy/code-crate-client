@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { themeChange } from "theme-change";
 import { AuthContext } from "../../../context/AuthProvider/AuthProvider";
 
@@ -18,22 +18,25 @@ const Header = () => {
     // 👆 false parameter is required for react project
   }, []);
 
+  const location = useLocation();
+  const path = location.pathname;
+
   return (
     <nav
-      className="relative bg-white shadow text-white"
-      style={{
-        backgroundImage:
-          "url('https://angfuzsoft.com/wordpress/acadu/wp-content/plugins/acadu-core/assets/img/header_bg_1.png')",
-      }}
+      className={`relative shadow z-50  ${
+        path === "/"
+          ? "bg-[url('https://angfuzsoft.com/wordpress/acadu/wp-content/plugins/acadu-core/assets/img/header_bg_1.png')] text-white"
+          : "text-black bg-white"
+      }`}
     >
-      <div className="container px-6 py-4 mx-auto">
+      <div className="container px-6 py-4 mx-auto ">
         <div className="lg:flex lg:items-center">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between ">
             {/* brand */}
-            <div className="text-xl font-semibold text-gray-700">
+            <div className="text-xl font-semibold ">
               <NavLink
                 to={"/"}
-                className="flex gap-1 text-2xl font-bold text-gray-800 transition-colors duration-300 transform dark:text-white lg:text-3xl hover:text-gray-700 dark:hover:text-gray-300 "
+                className="flex gap-1 text-2xl font-bold  transition-colors duration-100 transform  lg:text-3xl"
               >
                 <img
                   src="https://i.ibb.co/PtR21RC/favicon.png"
@@ -78,7 +81,7 @@ const Header = () => {
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 type="button"
-                className="text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400"
+                className="text-gray-500  hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400"
                 aria-label="toggle menu"
               >
                 <svg
@@ -119,25 +122,25 @@ const Header = () => {
               !isOpen
                 ? "translate-x-0 opacity-100 "
                 : "opacity-0 -translate-x-full"
-            } absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white dark:bg-gray-800 lg:mt-0 lg:p-0 lg:top-0 lg:relative lg:bg-transparent lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center lg:justify-between flex-1 top-[90px]`}
+            } absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white dark:bg-gray-800 lg:mt-0 lg:p-0 lg:top-0 lg:relative lg:bg-transparent lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center lg:justify-between flex-1 top-[90px] uppercase font-medium text-sm`}
           >
             <div className="flex sm:flex-col-reverse lg:flex-row lg:items-center lg:justify-between lg:w-full">
               <div className="flex flex-col -mx-6 lg:flex-row lg:items-center lg:mx-8">
                 <NavLink
                   to={"/courses"}
-                  className="px-3 py-2 mx-3 mt-2 text-gray-700 transition-colors duration-300 transform rounded-md lg:mt-0 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                  className="px-3 py-2 mx-3 mt-2  transition-colors duration-300 transform rounded-md lg:mt-0  hover:bg-gray-100 dark:hover:bg-gray-700"
                 >
                   Courses
                 </NavLink>
                 <NavLink
                   to={"/faq"}
-                  className="px-3 py-2 mx-3 mt-2 text-gray-700 transition-colors duration-300 transform rounded-md lg:mt-0 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                  className="px-3 py-2 mx-3 mt-2  transition-colors duration-300 transform rounded-md lg:mt-0  hover:bg-gray-100 dark:hover:bg-gray-700"
                 >
                   FAQ
                 </NavLink>
                 <NavLink
                   to={"/blog"}
-                  className="px-3 py-2 mx-3 mt-2 text-gray-700 transition-colors duration-300 transform rounded-md lg:mt-0 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                  className="px-3 py-2 mx-3 mt-2  transition-colors duration-300 transform rounded-md lg:mt-0  hover:bg-gray-100 dark:hover:bg-gray-700"
                 >
                   Blog
                 </NavLink>
@@ -188,15 +191,13 @@ const Header = () => {
                           alt="avatar"
                         />
                       </div>
-                      <h3 className="mx-2 text-gray-700 dark:text-gray-200 lg:hidden">
-                        {user?.displayName}
-                      </h3>
+                      <h3 className="mx-2   lg:hidden">{user?.displayName}</h3>
                     </button>
                   </Link>
                 ) : (
                   <NavLink
                     to={"/login"}
-                    className="px-3 py-2 mx-3 mt-2 text-gray-700 transition-colors duration-300 transform rounded-md lg:mt-0 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                    className="px-3 py-2 mx-3 mt-2  transition-colors duration-300 transform rounded-md lg:mt-0  hover:bg-gray-100 dark:hover:bg-gray-700"
                   >
                     Login
                   </NavLink>

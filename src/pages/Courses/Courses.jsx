@@ -4,11 +4,11 @@ import CourseMain from "./CourseMain/CourseMain";
 
 const Courses = () => {
   return (
-    <div className="grid grid-cols-12">
-      <div className="col-span-3 flex flex-col relative">
+    <div className="flex">
+      <div className="flex flex-col">
         <CourseSideNav></CourseSideNav>
       </div>
-      <div className="col-span-9">
+      <div className="w-full">
         <CourseMain></CourseMain>
       </div>
     </div>
