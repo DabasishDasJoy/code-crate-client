@@ -5,7 +5,7 @@ import CourseMain from "./CourseMain/CourseMain";
 const Courses = () => {
   return (
     <div className="grid grid-cols-12">
-      <div className="col-span-3 flex flex-col border border-orange-400">
+      <div className="col-span-3 flex flex-col relative">
         <CourseSideNav></CourseSideNav>
       </div>
       <div className="col-span-9">

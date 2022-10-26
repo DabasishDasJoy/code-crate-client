@@ -16,7 +16,7 @@ const Header = () => {
   useEffect(() => {
     themeChange(false);
     // 👆 false parameter is required for react project
-  });
+  }, []);
 
   return (
     <nav
@@ -50,7 +50,11 @@ const Header = () => {
               <div className="flex lg:hidden  justify-center lg:items-center gap-2">
                 <label className="swap swap-rotate">
                   {/* <!-- this hidden checkbox controls the state --> */}
-                  <input type="checkbox" />
+                  <input
+                    type="checkbox"
+                    data-toggle-theme="light,dark"
+                    data-act-class="ACTIVECLASS"
+                  />
 
                   {/* <!-- sun icon --> */}
                   <svg
@@ -145,7 +149,7 @@ const Header = () => {
 
                     <input
                       type="checkbox"
-                      data-toggle-theme="light,night"
+                      data-toggle-theme="light,dark"
                       data-act-class="ACTIVECLASS"
                     />
 
@@ -170,37 +174,25 @@ const Header = () => {
                 </div>
 
                 {user && user.uid ? (
-                  <button
-                    type="button"
-                    className="tooltip tooltip-left tooltip-primary flex items-center focus:outline-none lg:dropdown lg:dropdown-end"
-                    aria-label="toggle profile dropdown"
-                    data-tip={user?.email}
-                  >
-                    <div className="w-8 h-8 overflow-hidden border-2 border-gray-400 rounded-full">
-                      <img
-                        src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
-                        className="object-cover w-full h-full"
-                        alt="avatar"
-                      />
-                    </div>
-                    <h3 className="mx-2 text-gray-700 dark:text-gray-200 lg:hidden">
-                      {user?.displayName}
-                    </h3>
-                    <ul
-                      tabIndex={0}
-                      className="sm:hidden lg:block menu dropdown-content p-2 shadow dark:bg-gray-900 bg-slate-300 dark:text-white rounded-box w-52 absolute top-10 right-0"
+                  <Link to={"/userProfile"}>
+                    <button
+                      type="button"
+                      className="tooltip tooltip-left tooltip-primary flex items-center focus:outline-none "
+                      aria-label="toggle profile dropdown"
+                      data-tip={user?.email}
                     >
-                      <li>
-                        <Link to={"/userProfile"}>Profile</Link>
-                      </li>
-                      <li>
-                        <Link>Settings</Link>
-                      </li>
-                      <li>
-                        <button onClick={handleLogout}>Logout</button>
-                      </li>
-                    </ul>
-                  </button>
+                      <div className="w-8 h-8 overflow-hidden border-2 border-gray-400 rounded-full">
+                        <img
+                          src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
+                          className="object-cover w-full h-full"
+                          alt="avatar"
+                        />
+                      </div>
+                      <h3 className="mx-2 text-gray-700 dark:text-gray-200 lg:hidden">
+                        {user?.displayName}
+                      </h3>
+                    </button>
+                  </Link>
                 ) : (
                   <NavLink
                     to={"/login"}
