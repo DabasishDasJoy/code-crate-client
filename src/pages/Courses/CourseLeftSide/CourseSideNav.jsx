@@ -19,9 +19,9 @@ const CourseSideNav = () => {
             <path
               d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
               stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             ></path>
           </svg>
         </span>
@@ -36,7 +36,7 @@ const CourseSideNav = () => {
       <div className="flex flex-col flex-1 mt-6">
         <nav className="flex flex-col gap-5 px-5">
           {courses.map((course) => (
-            <Link to={`/course/${course._id}`}>
+            <Link to={`/course/${course._id}`} key={course._id}>
               <button
                 onClick={() => setSelectedCourse(course)}
                 className="flex gap-1 items-center"

@@ -4,21 +4,101 @@ import ReactToPdf from "react-to-pdf";
 
 const CourseDetails = () => {
   const ref = createRef();
-  const course = useLoaderData();
+  const { title, img_url, author, ratings } = useLoaderData();
 
   return (
     <div>
+      <div
+        className={`flex justify-center items-center bg-[url("https://i.ibb.co/tY00ygg/breadcumb-bg.jpg")] py-[100px] w-full bg-cover`}
+      >
+        <h2 className="text-5xl text-white font-semibold uppercase">{title}</h2>
+      </div>
+
+      <div className="flex justify-end px-10 mt-5">
+        <ReactToPdf targetRef={ref} filename={`${title}.pdf`}>
+          {({ toPdf }) => (
+            <button
+              onClick={toPdf}
+              className="px-6 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-[#0D5EF4] rounded-md hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80"
+            >
+              Download
+            </button>
+          )}
+        </ReactToPdf>
+      </div>
+
+      <div ref={ref} className="grid grid-cols-12 py-10">
+        <div className="col-span-9 flex flex-col gap-10 items-center">
+          <div className="shadow-lg w-[90%]  p-10 rounded-lg">
+            <img src={img_url} alt="" className="w-[500px] h-[500px] border" />
+            <div>
+              <h3 className="text-[36px] font-bold text-black">{title}</h3>
+            </div>
+            <div className="flex gap-5 text-[16px] font-medium">
+              <p className="border-r-2 pr-4">
+                Instrutor: {author[0].author_name}
+              </p>
+              <p className="border-r-2 pr-4">Ratings: {ratings}</p>
+            </div>
+          </div>
+
+          <div className="shadow-lg w-[90%]  p-10 rounded-lg">
+            <h4 className="text-[24px] font-semibold">About this Course</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
+              ad eligendi at eius molestiae tempore quisquam itaque explicabo
+              ipsum, reiciendis deleniti porro consequuntur doloribus quas
+              facere! Velit magnam culpa, sunt minima, maxime magni
+              necessitatibus ex fugit corrupti fugiat asperiores placeat fuga
+              dolorem eligendi quibusdam facere distinctio possimus doloremque
+              reiciendis pariatur!
+            </p>
+          </div>
+
+          <button>
+            <Link
+              to={"/checkout"}
+              className="px-6 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-[#0D5EF4] rounded-md hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80"
+            >
+              Get premium access
+            </Link>
+          </button>
+        </div>
+        <div className="col-span-3 flex flex-col gap-10 items-center">
+          <div className="border shadow-lg rounded-lg p-8 h-[500px] w-[90%]">
+            <h3 className="text-2xl text-center font-bold">Requirements</h3>
+            <ul className="list-disc list-inside">
+              <li>Presentation</li>
+              <li>Presentation</li>
+              <li>Presentation</li>
+              <li>Presentation</li>
+              <li>Presentation</li>
+              <li>Presentation</li>
+            </ul>
+          </div>
+          <div className="border shadow-lg rounded-lg p-8 h-[500px] w-[90%]">
+            <h3 className="text-2xl text-center font-bold">Audience</h3>
+            <ul className="list-disc list-inside">
+              <li>Presentation</li>
+              <li>Presentation</li>
+              <li>Presentation</li>
+              <li>Presentation</li>
+              <li>Presentation</li>
+              <li>Presentation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      {/* </div>
       <div>
         <ReactToPdf targetRef={ref} filename="div-blue.pdf">
           {({ toPdf }) => <button onClick={toPdf}>Generate pdf</button>}
         </ReactToPdf>
       </div>
-      <button>Download</button>
-      <h1 ref={ref}>Course title: {course.title}</h1>
 
       <button>
         <Link to={"/checkout"}>Get premium access</Link>
-      </button>
+      </button> */}
     </div>
   );
 };
