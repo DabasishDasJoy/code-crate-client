@@ -10,7 +10,7 @@ const CourseCard = ({
   const { setSelectedCourse } = useContext(CoursesContext);
 
   return (
-    <Link to={`/course/${_id}`}>
+    <Link to={`/course/${_id}`} onClick={() => setSelectedCourse(course)}>
       <div className="w-[350px] h-100 bg-white rounded-lg shadow-lg cursor-pointer relative">
         {ratings > 4 && (
           <div className="absolute top-5 right-5 badge bg-red-600 border-none ">

@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import { FaSignInAlt, FaSignOutAlt } from "react-icons/fa";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { themeChange } from "theme-change";
 import { AuthContext } from "../../../context/AuthProvider/AuthProvider";
@@ -145,7 +146,7 @@ const Header = () => {
                   Blog
                 </NavLink>
               </div>
-              <div className="lg:flex lg:items-center justify-center mt-4 lg:mt-0 gap-2">
+              <div className="lg:flex lg:items-center justify-between mt-4 lg:mt-0 gap-3">
                 <div className="lg:flex sm:hidden w-7 items-center justify-center">
                   <label className="swap swap-rotate">
                     {/* <!-- this hidden checkbox controls the state --> */}
@@ -176,7 +177,7 @@ const Header = () => {
                   </label>
                 </div>
 
-                {user && user.uid ? (
+                {user && user.uid && (
                   <Link to={"/userProfile"}>
                     <button
                       type="button"
@@ -194,14 +195,27 @@ const Header = () => {
                       <h3 className="mx-2   lg:hidden">{user?.displayName}</h3>
                     </button>
                   </Link>
-                ) : (
-                  <NavLink
-                    to={"/login"}
-                    className="px-3 py-2 mx-3 mt-2  transition-colors duration-300 transform rounded-md lg:mt-0  hover:bg-gray-100 dark:hover:bg-gray-700"
-                  >
-                    Login
-                  </NavLink>
                 )}
+
+                <div className="flex items-center gap-2 px-4 py-2 font-medium tracking-wide text-white  transition-colors duration-300 transform bg-[#0D5EF4] rounded-md hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">
+                  {user && user.uid ? (
+                    <button
+                      onClick={handleLogout}
+                      className="flex items-center gap-1 uppercase"
+                    >
+                      Logout
+                      <FaSignOutAlt />
+                    </button>
+                  ) : (
+                    <Link
+                      to={"/login"}
+                      className="flex uppercase items-center gap-1"
+                    >
+                      Login
+                      <FaSignInAlt />
+                    </Link>
+                  )}
+                </div>
               </div>
             </div>
           </div>

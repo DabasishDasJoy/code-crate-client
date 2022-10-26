@@ -1,4 +1,5 @@
 import React, { createRef } from "react";
+import { FaDownload, FaKey } from "react-icons/fa";
 import { Link, useLoaderData } from "react-router-dom";
 import ReactToPdf from "react-to-pdf";
 
@@ -19,8 +20,9 @@ const CourseDetails = () => {
           {({ toPdf }) => (
             <button
               onClick={toPdf}
-              className="px-6 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-[#0D5EF4] rounded-md hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80"
+              className="flex gap-1 items-center px-6 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-[#0D5EF4] rounded-md hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80"
             >
+              <FaDownload />
               Download
             </button>
           )}
@@ -58,9 +60,10 @@ const CourseDetails = () => {
           <button>
             <Link
               to={"/checkout"}
-              className="px-6 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-[#0D5EF4] rounded-md hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80"
+              className="flex items-center gap-2 px-6 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-[#0D5EF4] rounded-md hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80"
             >
               Get premium access
+              <FaKey />
             </Link>
           </button>
         </div>
@@ -89,16 +92,6 @@ const CourseDetails = () => {
           </div>
         </div>
       </div>
-      {/* </div>
-      <div>
-        <ReactToPdf targetRef={ref} filename="div-blue.pdf">
-          {({ toPdf }) => <button onClick={toPdf}>Generate pdf</button>}
-        </ReactToPdf>
-      </div>
-
-      <button>
-        <Link to={"/checkout"}>Get premium access</Link>
-      </button> */}
     </div>
   );
 };
