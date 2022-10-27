@@ -16,7 +16,7 @@ const Profile = () => {
     <div className="p-10 flex justify-center items-center">
       <div className="py-5 flex flex-col justify-between rounded-lg relative sm:w-[90%] md:w-[50%] shadow-lg min-h-[300px] border mt-10">
         <img
-          class="object-cover w-24 h-24 mx-auto rounded-full absolute -top-10 right-2 border-2 border-[#3B82F6]"
+          className="object-cover w-24 h-24 mx-auto rounded-full absolute -top-10 right-2 border-2 border-[#3B82F6]"
           src={user.photoURL}
           alt="user avatar"
         />

@@ -1,24 +1,33 @@
+import { ErrorMessage } from "@hookform/error-message";
 import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
+import ErrorComponent from "../shared/ErrorComponent/ErrorComponent";
 
 const Login = () => {
   const { login, loginWithGoogle, loginWithFacebook, loginWithGitHub } =
     useContext(AuthContext);
-  const { register, handleSubmit } = useForm({});
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm({
+    criteriaMode: "all",
+  });
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
 
   const onSubmit = (d) => {
-    login(d.email, d.password)
+    login(d.mail, d.password)
       .then((res) => {
         console.log(res.user);
         navigate(from, { replace: true });
       })
       .catch((err) => console.error(err));
   };
+  console.log(errors);
 
   const handleFacebookLogin = () => {
     loginWithFacebook()
@@ -177,8 +186,28 @@ const Login = () => {
             id="LoggingEmailAddress"
             className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-md   focus:border-blue-400 focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-blue-300"
             type="email"
-            required
-            {...register("email")}
+            {...register("email", {
+              required: "This input is required.",
+              pattern: {
+                value: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+                message: "Invalid email",
+              },
+            })}
+          />
+          <ErrorMessage
+            errors={errors}
+            name="email"
+            render={({ messages }) => {
+              console.log("messages", messages);
+              return messages
+                ? Object.entries(messages).map(([type, message]) => (
+                    <ErrorComponent
+                      key={type}
+                      message={message}
+                    ></ErrorComponent>
+                  ))
+                : null;
+            }}
           />
         </div>
 
@@ -202,8 +231,7 @@ const Login = () => {
             id="loggingPassword"
             className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-md    focus:border-blue-400 focus:ring-opacity-40  focus:outline-none focus:ring focus:ring-blue-300"
             type="password"
-            required
-            {...register("password")}
+            {...register("password", { required: "Password is required" })}
           />
         </div>
 
