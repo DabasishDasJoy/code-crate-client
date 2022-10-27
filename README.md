@@ -211,9 +211,7 @@ _Below is an example of how you can instruct your audience on installing and set
 
 <!-- CONTACT -->
 
-## Contact
-
-Dabasish Das Joy - [@github](https://github.com/DabasishDasJoy) - github.com
+## Website Link
 
 Website Link: [https://code-crate.web.app/](https://code-crate.web.app/)
 
