@@ -29,7 +29,8 @@ const Login = () => {
   };
   const handleGoogleLogin = () => {
     loginWithGoogle()
-      .then(() => {
+      .then((res) => {
+        console.log(res.user);
         navigate(from, { replace: true });
       })
       .catch((err) => console.error(err));
@@ -86,8 +87,8 @@ const Login = () => {
                   y2="40.615"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop offset="0" stop-color="#2aa4f4" />
-                  <stop offset="1" stop-color="#007ad9" />
+                  <stop offset="0" stopColor="#2aa4f4" />
+                  <stop offset="1" stopColor="#007ad9" />
                 </linearGradient>
                 <path
                   fill="url(#Ld6sqrtcxMyckEl6xeDdMa)"
@@ -168,7 +169,7 @@ const Login = () => {
         <div className="mt-4">
           <label
             className="block mb-2 text-sm font-medium text-black "
-            for="LoggingEmailAddress"
+            htmlFor="LoggingEmailAddress"
           >
             Email Address
           </label>
@@ -185,7 +186,7 @@ const Login = () => {
           <div className="flex justify-between">
             <label
               className="block mb-2 text-sm font-medium text-black "
-              for="loggingPassword"
+              htmlFor="loggingPassword"
             >
               Password
             </label>
@@ -214,68 +215,18 @@ const Login = () => {
             Login
           </button>
         </div>
-        <p class="mt-8 text-xs font-light text-center text-gray-400">
+        <p className="mt-8 text-xs font-light text-center text-gray-400">
           {" "}
           Don't have an account?{" "}
           <Link
             to={"/register"}
-            class="font-medium text-gray-700  hover:underline"
+            className="font-medium text-gray-700  hover:underline"
           >
             Create One
           </Link>
         </p>
       </form>
     </div>
-    // <div className="flex items-center">
-    //   <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 mx-auto">
-    //     <h2 className="text-2xl text-center font-semibold text-gray-700 ">
-    //       Sign In
-    //     </h2>
-    //     <form onSubmit={handleSubmit(onSubmit)} className="card-body">
-    //       <div className="form-control">
-    //         <label className="label">
-    //           <span className="label-text">Email</span>
-    //         </label>
-    //         <input
-    //           type="email"
-    //           {...register("email")}
-    //           placeholder="email"
-    //           className="input input-bordered"
-    //         />
-    //       </div>
-    //       <div className="form-control">
-    //         <label className="label">
-    //           <span className="label-text">Password</span>
-    //         </label>
-    //         <input
-    //           type="password"
-    //           {...register("password")}
-    //           placeholder="password"
-    //           className="input input-bordered"
-    //         />
-    //         <label className="label">
-    //           <Link
-    //             to={"/resetpassword"}
-    //             className="label-text-alt link link-hover"
-    //           >
-    //             Forgot password?
-    //           </Link>
-    //         </label>
-    //       </div>
-    //       <div className="form-control mt-6">
-    //         <button type="submit" className="btn btn-primary">
-    //           Login
-    //         </button>
-    //       </div>
-    //       <p className="font-medium my-[16px] text-center">
-    //         <span className="text-black">Don't have an account?</span>{" "}
-    //         <Link to={"/register"} className="underline text-[#F9A51A]">
-    //           Create an account
-    //         </Link>{" "}
-    //       </p>
-    //     </form>
-    //   </div>
-    // </div>
   );
 };
 
