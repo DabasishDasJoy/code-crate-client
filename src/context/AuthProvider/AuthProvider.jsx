@@ -25,7 +25,6 @@ const AuthProvider = ({ children }) => {
 
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState({});
-  const [name, setName] = useState("Dabasish");
 
   const createUser = (email, password) => {
     setLoading(true);
@@ -39,9 +38,7 @@ const AuthProvider = ({ children }) => {
 
   const login = (email, password) => {
     setLoading(true);
-    setName("joy");
-    console.log(loading, "from login");
-    console.log(name, "from login");
+
     return signInWithEmailAndPassword(auth, email, password);
   };
 

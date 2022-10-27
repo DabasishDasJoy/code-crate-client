@@ -11,7 +11,7 @@ const CourseCard = ({
 
   return (
     <Link to={`/course/${_id}`} onClick={() => setSelectedCourse(course)}>
-      <div className=" w-full h-100 bg-white rounded-lg shadow-2xl cursor-pointer relative">
+      <div className=" hover:shadow-2xl w-full h-100 bg-white rounded-lg shadow-md cursor-pointer relative">
         {ratings > 4 && (
           <div className="absolute top-5 right-5 badge bg-red-600 border-none ">
             Top Rated
