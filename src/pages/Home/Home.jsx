@@ -6,7 +6,8 @@ import "./Home.css";
 
 const Home = () => {
   return (
-    <div className="">
+    <div>
+      {/* banner */}
       <div
         className={`bg-[url('https://i.ibb.co/thfx3rV/hero-bg-8-1.jpg')] h-[80vh] relative`}
       >
@@ -26,7 +27,9 @@ const Home = () => {
           </Link>
         </div>
       </div>
-      <div className="flex justify-evenly my-10 gap-10 px-10">
+
+      {/* feature card */}
+      <div className="flex md:flex-row flex-col justify-evenly my-10 gap-10 px-10">
         <div
           className={`max-w-2xl px-8 py-4 bg-white rounded-lg shadow-md  bg-[url('https://i.ibb.co/hZ8wMTD/cta-bg-3.jpg')] bg-cover h-[300px] flex flex-col justify-around items-start gap-5`}
         >
