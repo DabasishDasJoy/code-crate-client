@@ -4,7 +4,8 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 
 const Login = () => {
-  const { login } = useContext(AuthContext);
+  const { login, loginWithGoogle, loginWithFacebook, loginWithGitHub } =
+    useContext(AuthContext);
   const { register, handleSubmit } = useForm({});
   const navigate = useNavigate();
   const location = useLocation();
@@ -14,6 +15,28 @@ const Login = () => {
     login(d.email, d.password)
       .then((res) => {
         console.log(res.user);
+        navigate(from, { replace: true });
+      })
+      .catch((err) => console.error(err));
+  };
+
+  const handleFacebookLogin = () => {
+    loginWithFacebook()
+      .then(() => {
+        navigate(from, { replace: true });
+      })
+      .catch((err) => console.error(err));
+  };
+  const handleGoogleLogin = () => {
+    loginWithGoogle()
+      .then(() => {
+        navigate(from, { replace: true });
+      })
+      .catch((err) => console.error(err));
+  };
+  const handleGithubLogin = () => {
+    loginWithGitHub()
+      .then(() => {
         navigate(from, { replace: true });
       })
       .catch((err) => console.error(err));
@@ -42,15 +65,11 @@ const Login = () => {
 
           <span className="w-1/5 border-b  lg:w-1/4"></span>
         </div>
-        {/* <fieldset className="border-t border-[#AAAAAA] w-[400px] mx-auto">
-          <legend className="mx-auto px-1 text-black font-medium italic">
-            Or
-          </legend>
-        </fieldset> */}
 
         <div className="flex justify-evenly items-center">
-          <Link
-            to={""}
+          {/* facebook */}
+          <button
+            onClick={handleFacebookLogin}
             className="flex items-center justify-center mt-4 text-black transition-colors duration-300 transform border rounded-lg hover:bg-gray-50 "
           >
             <div className="px-4 py-2 flex items-center">
@@ -83,9 +102,11 @@ const Login = () => {
                 Facebook
               </span>
             </div>
-          </Link>
-          <Link
-            to={""}
+          </button>
+
+          {/* Google */}
+          <button
+            onClick={handleGoogleLogin}
             className="flex items-center justify-center mt-4 text-black transition-colors duration-300 transform border rounded-lg hover:bg-gray-50 "
           >
             <div className="px-4 py-2 flex items-center">
@@ -111,13 +132,11 @@ const Login = () => {
                 Google
               </span>
             </div>
+          </button>
 
-            {/* <span className="w-5/6 px-4 py-3 font-bold text-center">
-              Sign in with Google
-            </span> */}
-          </Link>
-          <Link
-            to={""}
+          {/* Github */}
+          <button
+            onClick={handleGithubLogin}
             className="flex items-center justify-center mt-4 text-black transition-colors duration-300 transform border rounded-lg hover:bg-gray-50 "
           >
             <div className="px-4 py-2 flex items-center">
@@ -133,7 +152,7 @@ const Login = () => {
                 GitHub
               </span>
             </div>
-          </Link>
+          </button>
         </div>
 
         <div className="flex items-center justify-between mt-4">
