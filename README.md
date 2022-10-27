@@ -64,16 +64,8 @@ The project is build based on educational purposes. In this era of digital world
 
 This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
-- [![Next][next.js]][next-url]
 - [![React][react.js]][react-url]
-- [![Vue][vue.js]][vue-url]
-- [![Angular][angular.io]][angular-url]
-- [![Svelte][svelte.dev]][svelte-url]
-- [![Laravel][laravel.com]][laravel-url]
-- [![Bootstrap][bootstrap.com]][bootstrap-url]
-- [![JQuery][jquery.com]][jquery-url]
-- [![TailWindCSS][tailwindcss.com]][tailwind-url]
-- [![Daisy UI][daisyui.com]][https://daisyui.com/]
+- ![image]({https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white})
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -81,13 +73,17 @@ This section should list any major frameworks/libraries used to bootstrap your p
 
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+To run this project locally you need to first install it. Then run it. You can use yarn npm whatever you want.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
+Before get into run the project first make sure you have:
 
+- javascript enabled browser
+- node js
+  ```sh
+  download and install from the website
+  ```
 - npm
   ```sh
   npm install npm@latest -g
@@ -97,19 +93,23 @@ This is an example of how to list things you need to use the software and how to
 
 _Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
-1. Get a free API Key at [https://example.com](https://example.com)
 2. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/dabasishDasJoy/code-crate.git
    ```
 3. Install NPM packages
    ```sh
    npm install
    ```
-4. Enter your API in `config.js`
+   or
+   ```sh
+   yarn install
+   ```
+4. Enter your API in `firebase.config.init.js`
    ```js
    const API_KEY = "ENTER YOUR API";
    ```
+   or
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -117,9 +117,10 @@ _Below is an example of how you can instruct your audience on installing and set
 
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
+- This project can be used in online learning or e-learning platform.
+- Since the project is most of the dynamic so anyone can user their own data.
+- Also there is a dedicated blog section which will help to get updated with modern technolody.
+- Also map is used to find the location easily.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -127,40 +128,26 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 ## Roadmap
 
-- [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-  - [ ] Chinese
-  - [ ] Spanish
-
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
+- [x] Create react app
+- [x] Routing by react rouder dom
+- [x] For design used tailwind and daisy ui component library
+- [x] React-form-hook to control form data.
+- [x] Different packages used to built the website.
+- [x] Built API for fetching data and display dynamically.
+  - [x] Used express js for building API
+  - [x] Nodemon to run the server
+  - [x] Vercel to deploy the server
+- [x] Firebase for authenticate user.
+- [x] Make user login or register.
+- [x] Halt unauthenticated user to private routes.
+- [x] Used three types of authentication system GitHub, Google, and Email.
+- [x] Deploy the website in firebase.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
 
-## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- LICENSE -->
-
-## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -168,9 +155,9 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+Dabasish Das Joy - [@your_twitter](https://twitter.com/your_username) - email@example.com
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Website Link: [https://code-crate.web.app/](https://code-crate.web.app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -178,16 +165,10 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 
 ## Acknowledgments
 
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
+The resourses helped me out to built this website
 
-- [Choose an Open Source License](https://choosealicense.com)
-- [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-- [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)
-- [Malven's Grid Cheatsheet](https://grid.malven.co/)
-- [Img Shields](https://shields.io)
-- [GitHub Pages](https://pages.github.com)
-- [Font Awesome](https://fontawesome.com)
-- [React Icons](https://react-icons.github.io/react-icons/search)
+- [React Router DOM](https://react-router-dom.com)
+- [React JS](https://www.reactjs.org)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
