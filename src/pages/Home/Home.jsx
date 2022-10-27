@@ -9,7 +9,7 @@ const Home = () => {
     <div>
       {/* banner */}
       <div
-        className={`bg-[url('https://i.ibb.co/thfx3rV/hero-bg-8-1.jpg')] h-[80vh] relative`}
+        className={`bg-[url('https://angfuzsoft.com/wordpress/acadu/wp-content/uploads/2022/09/hero_bg_8_1.jpg')] h-[80vh] relative`}
       >
         <img
           src="https://i.ibb.co/HzcNyND/hero-overlay-8.png"
