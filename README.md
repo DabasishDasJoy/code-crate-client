@@ -75,11 +75,11 @@ The project is build based on educational purposes. In this era of digital world
 
 This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
-- [![React][react.js]][react-url]
-- <img src="{https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white}" />
-- <img src="{https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white}" />
-- <img src="{https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white}" />
-- <img src="{https://img.shields.io/badge/Leaflet-199900?style=for-the-badge&logo=Leaflet&logoColor=white}" />
+- REACT
+- TAILWIND CSS
+- DAISY UI
+- MERAKI UI
+- REACT ROUTER
 
 ## Packages, library other technology used
 
