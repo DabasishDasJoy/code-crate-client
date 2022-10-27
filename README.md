@@ -3,8 +3,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  <a href="">
+    <img src="https://i.ibb.co/PtR21RC/favicon.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Code Crate</h3>
@@ -72,7 +72,7 @@ This section should list any major frameworks/libraries used to bootstrap your p
 - [![Laravel][laravel.com]][laravel-url]
 - [![Bootstrap][bootstrap.com]][bootstrap-url]
 - [![JQuery][jquery.com]][jquery-url]
-- [![TailWindCSS][tailwindcss.com]][https://tailwindcss.com/]
+- [![TailWindCSS][tailwindcss.com]][tailwind-url]
 - [![Daisy UI][daisyui.com]][https://daisyui.com/]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
