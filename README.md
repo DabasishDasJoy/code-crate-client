@@ -42,9 +42,6 @@
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
- 
-  
-   
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
@@ -53,10 +50,23 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][https://i.ibb.co/xg2y7js/screenshot-2022-10-27-202333.png]](https://i.ibb.co/xg2Y7jS/Screenshot-2022-10-27-202333.png)
-[![Product Name Screen Shot][product-screenshot]](https://i.ibb.co/2KHsF4z/Screenshot-2022-10-27-202432.png)
+<img src="https://i.ibb.co/xg2y7js/screenshot-2022-10-27-202333.png"/>
 
 The project is build based on educational purposes. In this era of digital world everything is centered in the binary digits. So education is also now became more available and quilified through these binary numbers. Now a days anyone can get a quilified proper education from a reputed wise person from anywhere in the world. This application also can take part of these great revolution.
+
+## Features
+
+- Any user can visit the website as guest.
+- To purchace any course user must have an account.
+- Account can be created in three ways GitHub, Google and Email.
+- Only logged in user can acces the full website.
+- User can choose and purchase course on demand.
+- A dedicated blog section is to know updated technology.
+- User can view location of the office on live map.
+- User can update profile any time including password.
+- Authentication is get by using firebase.
+- Also own build server is running for data.
+- Further common questions can be found in frequently ask questions section.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -66,6 +76,22 @@ This section should list any major frameworks/libraries used to bootstrap your p
 
 - [![React][react.js]][react-url]
 - ![image]({https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white})
+- ![image]({https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white})
+- ![image]({https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white})
+- ![image]({https://img.shields.io/badge/Leaflet-199900?style=for-the-badge&logo=Leaflet&logoColor=white})
+- ![image]({})
+
+## Packages, library other technology used
+
+- React-hook-form
+- React-icons
+- React-leaflet
+- React-loader
+- daisy UI
+- Firebase Authentication
+- Vercel
+- GitHub
+- Facebook
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -93,11 +119,11 @@ Before get into run the project first make sure you have:
 
 _Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
-2. Clone the repo
+1. Clone the repo
    ```sh
    git clone https://github.com/dabasishDasJoy/code-crate.git
    ```
-3. Install NPM packages
+2. Install NPM packages
    ```sh
    npm install
    ```
@@ -105,13 +131,22 @@ _Below is an example of how you can instruct your audience on installing and set
    ```sh
    yarn install
    ```
-4. Enter your API in `firebase.config.init.js`
+3. Enter your API in `firebase.config.init.js`
    ```js
    const API_KEY = "ENTER YOUR API";
    ```
    or
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+### Deploy
+
+1. ```sh
+      yarn start
+   ```
+   or
+   ```sh
+   npm start
+   ```
+   <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- USAGE EXAMPLES -->
 
