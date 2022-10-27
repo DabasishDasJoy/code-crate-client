@@ -83,7 +83,6 @@ const Profile = () => {
                   className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-md   focus:border-blue-400 focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-blue-300"
                   type="text"
                   defaultValue={user?.displayName}
-                  required
                   {...register("name")}
                 />
               </div>
@@ -98,7 +97,6 @@ const Profile = () => {
                   id="LoggingPhotoUrl"
                   className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-md   focus:border-blue-400 focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-blue-300"
                   type="text"
-                  required
                   {...register("photoUrl")}
                 />
               </div>

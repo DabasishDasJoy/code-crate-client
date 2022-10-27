@@ -34,7 +34,10 @@ const Blog = () => {
             </p>
           </article>
           <article>
-            <h3 className="font-bold text-2xl">Why Firebase?</h3>
+            <h3 className="font-bold text-2xl">
+              Why Firebase? What other options do you have to implement
+              authentication?
+            </h3>
             <p className="font-medium mt-2 pl-5">
               Most apps need to know the identity of a user. Knowing a user's
               identity allows an app to securely save user data in the cloud and

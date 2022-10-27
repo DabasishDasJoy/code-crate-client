@@ -5,7 +5,7 @@ import ReactToPdf from "react-to-pdf";
 
 const CourseDetails = () => {
   const ref = createRef();
-  const { _id, title, img_url, author, ratings } = useLoaderData();
+  const { _id, title, img_url, author, ratings, description } = useLoaderData();
 
   return (
     <div>
@@ -51,15 +51,7 @@ const CourseDetails = () => {
 
           <div className="shadow-lg w-[90%]  p-10 rounded-lg">
             <h4 className="text-[24px] font-semibold">About this Course</h4>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
-              ad eligendi at eius molestiae tempore quisquam itaque explicabo
-              ipsum, reiciendis deleniti porro consequuntur doloribus quas
-              facere! Velit magnam culpa, sunt minima, maxime magni
-              necessitatibus ex fugit corrupti fugiat asperiores placeat fuga
-              dolorem eligendi quibusdam facere distinctio possimus doloremque
-              reiciendis pariatur!
-            </p>
+            <p>{description}</p>
           </div>
 
           <button className="sm:order-3 lg:order-2">

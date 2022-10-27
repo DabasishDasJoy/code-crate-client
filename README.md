@@ -60,6 +60,7 @@ The project is build based on educational purposes. In this era of digital world
 - To purchace any course user must have an account.
 - Account can be created in three ways GitHub, Google and Email.
 - Only logged in user can acces the full website.
+- Guest user can download the details as pdf also.
 - User can choose and purchase course on demand.
 - A dedicated blog section is to know updated technology.
 - User can view location of the office on live map.
@@ -75,11 +76,10 @@ The project is build based on educational purposes. In this era of digital world
 This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
 - [![React][react.js]][react-url]
-- ![image]({https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white})
-- ![image]({https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white})
-- ![image]({https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white})
-- ![image]({https://img.shields.io/badge/Leaflet-199900?style=for-the-badge&logo=Leaflet&logoColor=white})
-- ![image]({})
+- <img src="{https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white}" />
+- <img src="{https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white}" />
+- <img src="{https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white}" />
+- <img src="{https://img.shields.io/badge/Leaflet-199900?style=for-the-badge&logo=Leaflet&logoColor=white}" />
 
 ## Packages, library other technology used
 
@@ -87,6 +87,7 @@ This section should list any major frameworks/libraries used to bootstrap your p
 - React-icons
 - React-leaflet
 - React-loader
+- React-to-pdf
 - daisy UI
 - Firebase Authentication
 - Vercel
@@ -137,6 +138,28 @@ _Below is an example of how you can instruct your audience on installing and set
    ```
    or
 
+## API Reference
+
+#### Get all courses
+
+```http
+  GET https://code-crate-server.vercel.app/courses
+```
+
+| Parameter | Type | Description                             |
+| :-------- | :--- | :-------------------------------------- |
+| `none`    | `=`  | Fetch all the topics of the application |
+
+#### Get a specific course
+
+```http
+  GET https://code-crate-server.vercel.app/course/${courseId}
+```
+
+| Parameter | Type     | Description                         |
+| :-------- | :------- | :---------------------------------- |
+| `id`      | `string` | **Required**. Id of course to fetch |
+
 ### Deploy
 
 1. ```sh
@@ -167,7 +190,7 @@ _Below is an example of how you can instruct your audience on installing and set
 - [x] Routing by react rouder dom
 - [x] For design used tailwind and daisy ui component library
 - [x] React-form-hook to control form data.
-- [x] Different packages used to built the website.
+- [x] Different packages used to built the website like react-to-pdf to download pdf.
 - [x] Built API for fetching data and display dynamically.
   - [x] Used express js for building API
   - [x] Nodemon to run the server
@@ -190,7 +213,7 @@ _Below is an example of how you can instruct your audience on installing and set
 
 ## Contact
 
-Dabasish Das Joy - [@your_twitter](https://twitter.com/your_username) - email@example.com
+Dabasish Das Joy - [@github](https://github.com/DabasishDasJoy) - github.com
 
 Website Link: [https://code-crate.web.app/](https://code-crate.web.app/)
 

@@ -207,7 +207,9 @@ const Header = () => {
                       type="button"
                       className="tooltip tooltip-left tooltip-primary flex items-center focus:outline-none "
                       aria-label="toggle profile dropdown"
-                      data-tip={user?.displayName}
+                      data-tip={
+                        user.displayName ? user.displayName : "No name found"
+                      }
                     >
                       <div className="w-8 h-8 overflow-hidden border-2 border-gray-400 rounded-full">
                         <img
