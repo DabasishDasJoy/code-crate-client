@@ -53,7 +53,7 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://i.ibb.co/xg2Y7jS/Screenshot-2022-10-27-202333.png)
+[![Product Name Screen Shot][https://i.ibb.co/xg2y7js/screenshot-2022-10-27-202333.png]](https://i.ibb.co/xg2Y7jS/Screenshot-2022-10-27-202333.png)
 [![Product Name Screen Shot][product-screenshot]](https://i.ibb.co/2KHsF4z/Screenshot-2022-10-27-202432.png)
 
 The project is build based on educational purposes. In this era of digital world everything is centered in the binary digits. So education is also now became more available and quilified through these binary numbers. Now a days anyone can get a quilified proper education from a reputed wise person from anywhere in the world. This application also can take part of these great revolution.
