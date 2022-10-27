@@ -2,9 +2,9 @@ import React from "react";
 
 const Blog = () => {
   return (
-    <div className="bg-fixed bg-[url('')] bg-no-repeat bg-cover min-h-[100vh] bg-center">
+    <div className="bg-fixed  bg-no-repeat bg-cover min-h-[100vh] bg-center">
       <div
-        className={`flex justify-center items-center bg-[url('https://i.ibb.co/jWxJkLY/breadcumb-bg.jpg')] py-[100px] w-full bg-cover`}
+        className={`flex justify-center items-center bg-[url('https://angfuzsoft.com/wordpress/acadu/wp-content/uploads/2022/08/breadcumb-bg.jpg')] py-[100px] w-full bg-cover`}
       >
         <h2 className="text-5xl text-white font-semibold uppercase">Blogs</h2>
       </div>
