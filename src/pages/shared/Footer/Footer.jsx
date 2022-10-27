@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <footer
-      className={`bg-[url('https://i.ibb.co/h9jKnTw/testi-bg-1.jpg')] mt-10`}
+      className={`bg-[url('https://i.ibb.co/h9jKnTw/testi-bg-1.jpg')] bg-cover bg-no-repeat mt-10`}
     >
       <div className="container p-6 mx-auto">
         <div className="lg:flex">
@@ -147,7 +147,7 @@ const Footer = () => {
                   +1 526 654 8965
                 </span>
                 <span className="block mt-2 text-sm text-white dark:text-gray-400 hover:underline">
-                  example@email.com
+                  dabasishdasjoy92@email.com
                 </span>
               </div>
             </div>

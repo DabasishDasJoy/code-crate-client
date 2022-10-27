@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 import { CoursesContext } from "../../../../context/CoursesProvider/CoursesProvider";
 const CourseCard = ({
   course,
-  course: { _id, img_url, title, price, author, ratings },
+  course: { _id, img_url, title, price, author, ratings, lessons, hours },
 }) => {
-  const { author_name, author_img } = author[0];
+  const { author_name, author_img } = author;
   const { setSelectedCourse } = useContext(CoursesContext);
 
   return (
@@ -98,10 +98,10 @@ const CourseCard = ({
             <p className="text-xl font-bold mt-2 text-orange-500">{price}</p>
             <hr className="border-dashed mt-5" />
             <div className="flex justify-between mt-2">
-              <small>Lessons</small>
-              <small>Students</small>
+              <small>{lessons} Lessons</small>
+              <small>2000 Students</small>
               <small className="flex gap-1 items-center">
-                <FaClock className="text-gray-400" /> 17 h 30 m
+                <FaClock className="text-gray-400" /> {hours}
               </small>
             </div>
           </div>

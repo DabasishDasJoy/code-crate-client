@@ -7,7 +7,7 @@ const CourseMain = () => {
   return (
     <div className="text-[#0F2239]">
       <div
-        className={`flex justify-center items-center bg-[url("https://i.ibb.co/tY00ygg/breadcumb-bg.jpg")] py-[100px] w-full bg-cover`}
+        className={`flex justify-center items-center bg-[url('https://i.ibb.co/jWxJkLY/breadcumb-bg.jpg')] py-[100px] w-full bg-cover`}
       >
         <h2 className="text-5xl text-white font-semibold uppercase">Courses</h2>
       </div>

@@ -44,9 +44,7 @@ const CourseDetails = () => {
               <h3 className="text-[36px] font-bold text-black">{title}</h3>
             </div>
             <div className="flex gap-5 text-[16px] font-medium">
-              <p className="border-r-2 pr-4">
-                Instrutor: {author[0].author_name}
-              </p>
+              <p className="border-r-2 pr-4">Instrutor: {author.author_name}</p>
               <p className="border-r-2 pr-4">Ratings: {ratings}</p>
             </div>
           </div>
