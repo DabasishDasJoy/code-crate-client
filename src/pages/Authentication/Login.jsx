@@ -31,7 +31,7 @@ const Login = () => {
         navigate(from, { replace: true });
       })
       .catch((err) => {
-        toast.warning(err.message, {
+        toast.error(err.message, {
           position: toast.POSITION.TOP_CENTER,
         });
       });
@@ -47,7 +47,7 @@ const Login = () => {
   //       navigate(from, { replace: true });
   //     })
   //     .catch((err) => {
-  //       toast.warning(err.message, {
+  //       toast.error(err.message, {
   //         position: toast.POSITION.TOP_CENTER,
   //       });
   //     });
@@ -61,7 +61,7 @@ const Login = () => {
         navigate(from, { replace: true });
       })
       .catch((err) => {
-        toast.warning(err.message, {
+        toast.error(err.message, {
           position: toast.POSITION.TOP_CENTER,
         });
       });
@@ -75,7 +75,7 @@ const Login = () => {
         navigate(from, { replace: true });
       })
       .catch((err) => {
-        toast.success(err.message, {
+        toast.error(err.message, {
           position: toast.POSITION.TOP_CENTER,
         });
       });

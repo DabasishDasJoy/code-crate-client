@@ -16,6 +16,7 @@ const ResetPassword = () => {
   };
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
+      <h1 className="text-2xl text-center font-bold mt-5">Password Reset</h1>
       <div className="py-5 px-10 mx-auto flex flex-col justify-between rounded-lg relative sm:w-[90%] md:w-[50%] shadow-lg min-h-[300px] border mt-10">
         <div>
           <label className="text-gray-700 dark:text-gray-200" Htmlfor="email">

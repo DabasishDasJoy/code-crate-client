@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 
 const Profile = () => {
@@ -8,8 +9,10 @@ const Profile = () => {
 
   const onSubmit = (d) => {
     updateUserProfile(d.name, d.photoURLoUrl)
-      .then(() => {})
-      .catch((err) => console.error(err));
+      .then(() => {
+        toast.success("Profile update successful!");
+      })
+      .catch((err) => toast.error((error) => error.message));
   };
 
   return (
@@ -17,14 +20,14 @@ const Profile = () => {
       <div className="py-5 flex flex-col justify-between rounded-lg relative sm:w-[90%] md:w-[50%] shadow-lg min-h-[300px] border mt-10">
         <img
           className="object-cover w-24 h-24 mx-auto rounded-full absolute -top-10 right-2 border-2 border-[#3B82F6]"
-          src={user.photoURL}
+          src={user?.photoURL}
           alt="user avatar"
         />
         <div className="p-10">
           <p className="text-2xl text-black font-bold">
-            Name: {user.displayName}
+            Name: {user?.displayName}
           </p>
-          <p className="font-semibold">Email: {user.email}</p>
+          <p className="font-semibold">Email: {user?.email}</p>
         </div>
         <div className="flex justify-center items-center">
           <label
@@ -64,7 +67,7 @@ const Profile = () => {
                   className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-md   focus:border-blue-400 focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-blue-300"
                   type="text"
                   required
-                  defaultValue={user.email}
+                  defaultValue={user?.email}
                   readOnly
                 />
               </div>
@@ -79,7 +82,7 @@ const Profile = () => {
                   id="LoggingName"
                   className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-md   focus:border-blue-400 focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-blue-300"
                   type="text"
-                  defaultValue={user.displayName}
+                  defaultValue={user?.displayName}
                   required
                   {...register("name")}
                 />

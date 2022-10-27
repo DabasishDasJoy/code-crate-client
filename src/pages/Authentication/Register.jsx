@@ -34,32 +34,40 @@ const Register = () => {
         updateProfileOfUser(d.name, d.photoUrl);
         navigate(from, { replace: true });
       })
-      .catch((err) => console.error(err));
+      .catch((err) => {
+        toast.error(err.message, {
+          position: toast.POSITION.TOP_CENTER,
+        });
+      });
   };
 
   const updateProfileOfUser = (name, photoUrl) => {
     updateUserProfile(name, photoUrl)
-      .then(() => {})
-      .catch((err) => {
-        toast.success(err.message, {
-          position: toast.POSITION.TOP_CENTER,
-        });
-      });
-  };
-  const handleFacebookLogin = () => {
-    loginWithFacebook()
-      .then((res) => {
+      .then(() => {
         toast.success(`Welcome! You are logged in!`, {
           position: toast.POSITION.TOP_CENTER,
         });
-        navigate(from, { replace: true });
       })
       .catch((err) => {
-        toast.success(err.message, {
+        toast.error(err.message, {
           position: toast.POSITION.TOP_CENTER,
         });
       });
   };
+  // const handleFacebookLogin = () => {
+  //   loginWithFacebook()
+  //     .then((res) => {
+  //       toast.success(`Welcome! You are logged in!`, {
+  //         position: toast.POSITION.TOP_CENTER,
+  //       });
+  //       navigate(from, { replace: true });
+  //     })
+  //     .catch((err) => {
+  //       toast.success(err.message, {
+  //         position: toast.POSITION.TOP_CENTER,
+  //       });
+  //     });
+  // };
   const handleGoogleLogin = () => {
     loginWithGoogle()
       .then((res) => {
@@ -69,7 +77,7 @@ const Register = () => {
         navigate(from, { replace: true });
       })
       .catch((err) => {
-        toast.success(err.message, {
+        toast.error(err.message, {
           position: toast.POSITION.TOP_CENTER,
         });
       });
@@ -83,7 +91,7 @@ const Register = () => {
         navigate(from, { replace: true });
       })
       .catch((err) => {
-        toast.success(err.message, {
+        toast.error(err.message, {
           position: toast.POSITION.TOP_CENTER,
         });
       });
@@ -109,9 +117,9 @@ const Register = () => {
           <span className="w-1/5 border-b  lg:w-1/4"></span>
         </div>
 
-        <div className="flex justify-between items-center">
+        <div className="flex justify-evenly items-center">
           {/* facebook */}
-          <button
+          {/* <button
             onClick={handleFacebookLogin}
             className="flex items-center justify-center mt-4 text-black transition-colors duration-300 transform border rounded-lg hover:bg-gray-50 "
           >
@@ -145,7 +153,7 @@ const Register = () => {
                 Facebook
               </span>
             </div>
-          </button>
+          </button> */}
 
           {/* Google */}
           <button
@@ -219,6 +227,7 @@ const Register = () => {
               id="LoggingName"
               className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-md   focus:border-blue-400 focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-blue-300"
               type="text"
+              placeholder="Your name"
               {...register("name", {
                 required: "This field is required.",
               })}
@@ -250,6 +259,7 @@ const Register = () => {
               id="LoggingPhotoUrl"
               className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-md   focus:border-blue-400 focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-blue-300"
               type="text"
+              placeholder="Image Url"
               {...register("photoUrl", {
                 required: "This field is required.",
               })}
@@ -282,6 +292,7 @@ const Register = () => {
               id="LoggingEmailAddress"
               className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-md   focus:border-blue-400 focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-blue-300"
               type="email"
+              placeholder="Your email"
               {...register("email", {
                 required: "This input is required.",
                 pattern: {
@@ -321,6 +332,7 @@ const Register = () => {
               id="loggingPassword"
               className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-md    focus:border-blue-400 focus:ring-opacity-40  focus:outline-none focus:ring focus:ring-blue-300"
               type="password"
+              placeholder="You password"
               {...register("password", {
                 required: "This field is required!",
                 validate: {

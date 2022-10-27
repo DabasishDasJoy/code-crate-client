@@ -36,10 +36,13 @@ const Home = () => {
           <h1 className="text-[#000A38] text-2xl font-bold ">
             Get The Best Courses And Enhance Your Knowledge
           </h1>
-          <button className="flex items-center gap-1 px-4 py-2 font-medium tracking-wide text-white  transition-colors duration-300 transform bg-[#0D5EF4] rounded-md hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">
+          <Link
+            to={"/register"}
+            className="flex items-center gap-1 px-4 py-2 font-medium tracking-wide text-white  transition-colors duration-300 transform bg-[#0D5EF4] rounded-md hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80"
+          >
             Join Us
             <FaArrowRight />
-          </button>
+          </Link>
         </div>
 
         <div
@@ -48,10 +51,13 @@ const Home = () => {
           <h1 className="text-[#000A38] text-2xl font-bold ">
             Get The Best Courses And Enhance Your Knowledge
           </h1>
-          <button className="flex items-center gap-1 px-4 py-2 font-medium tracking-wide text-white  transition-colors duration-300 transform bg-[#0D5EF4] rounded-md hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">
+          <Link
+            to={"/register"}
+            className="flex items-center gap-1 px-4 py-2 font-medium tracking-wide text-white  transition-colors duration-300 transform bg-[#0D5EF4] rounded-md hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80"
+          >
             Join Us
             <FaArrowRight />
-          </button>
+          </Link>
         </div>
       </div>
 
