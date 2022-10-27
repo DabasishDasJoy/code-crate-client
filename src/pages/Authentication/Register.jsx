@@ -315,12 +315,6 @@ const Register = () => {
               >
                 Password
               </label>
-              <Link
-                to={"/reset"}
-                className="inline-block mt-4 text-center text-blue-500 md:mt-0 hover:underline dark:text-blue-400"
-              >
-                Forgot Password?
-              </Link>
             </div>
 
             <input

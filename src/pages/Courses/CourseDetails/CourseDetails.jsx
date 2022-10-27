@@ -1,5 +1,5 @@
 import React, { createRef } from "react";
-import { FaDownload, FaKey } from "react-icons/fa";
+import { FaArrowLeft, FaDownload, FaKey } from "react-icons/fa";
 import { Link, useLoaderData } from "react-router-dom";
 import ReactToPdf from "react-to-pdf";
 
@@ -15,7 +15,14 @@ const CourseDetails = () => {
         <h2 className="text-5xl text-white font-semibold uppercase">{title}</h2>
       </div>
 
-      <div className="flex justify-end px-10 mt-5">
+      <div className="flex justify-between px-10 mt-5">
+        <Link
+          to={"/courses"}
+          className="flex gap-1 items-center px-6 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-[#0D5EF4] rounded-md hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80"
+        >
+          <FaArrowLeft></FaArrowLeft>
+          Go Back to courses
+        </Link>
         <ReactToPdf targetRef={ref} filename={`${title}.pdf`}>
           {({ toPdf }) => (
             <button
@@ -29,8 +36,8 @@ const CourseDetails = () => {
         </ReactToPdf>
       </div>
 
-      <div ref={ref} className="grid grid-cols-12 py-10">
-        <div className="col-span-9 flex flex-col gap-10 items-center">
+      <div ref={ref} className="grid lg:grid-cols-12 grid-cols-1 py-10">
+        <div className="col-span-9 flex flex-col gap-10 items-center lg:order-1 sm:order-1">
           <div className="shadow-lg w-[90%]  p-10 rounded-lg">
             <img src={img_url} alt="" className="w-full border rounded-lg" />
             <div>
@@ -57,7 +64,7 @@ const CourseDetails = () => {
             </p>
           </div>
 
-          <button>
+          <button className="sm:order-3 lg:order-2">
             <Link
               to={`/checkout/${_id}`}
               className="flex items-center gap-2 px-6 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-[#0D5EF4] rounded-md hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80"

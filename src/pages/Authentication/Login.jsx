@@ -38,20 +38,20 @@ const Login = () => {
   };
   console.log(errors);
 
-  const handleFacebookLogin = () => {
-    loginWithFacebook()
-      .then((res) => {
-        toast.success(`Welcome! You are logged in!`, {
-          position: toast.POSITION.TOP_CENTER,
-        });
-        navigate(from, { replace: true });
-      })
-      .catch((err) => {
-        toast.warning(err.message, {
-          position: toast.POSITION.TOP_CENTER,
-        });
-      });
-  };
+  // const handleFacebookLogin = () => {
+  //   loginWithFacebook()
+  //     .then((res) => {
+  //       toast.success(`Welcome! You are logged in!`, {
+  //         position: toast.POSITION.TOP_CENTER,
+  //       });
+  //       navigate(from, { replace: true });
+  //     })
+  //     .catch((err) => {
+  //       toast.warning(err.message, {
+  //         position: toast.POSITION.TOP_CENTER,
+  //       });
+  //     });
+  // };
   const handleGoogleLogin = () => {
     loginWithGoogle()
       .then((res) => {
@@ -82,7 +82,7 @@ const Login = () => {
   };
 
   return (
-    <div className="flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg lg:max-w-4xl my-5">
+    <div className="flex w-full max-w-md mx-auto overflow-hidden bg-white rounded-lg shadow-lg lg:max-w-4xl my-5">
       <div
         className="hidden bg-cover lg:block lg:w-1/2"
         style={{
@@ -102,9 +102,9 @@ const Login = () => {
           <span className="w-1/5 border-b  lg:w-1/4"></span>
         </div>
 
-        <div className="flex justify-between items-center">
+        <div className="flex justify-evenly items-center">
           {/* facebook */}
-          <button
+          {/* <button
             onClick={handleFacebookLogin}
             className="flex items-center justify-center mt-4 text-black transition-colors duration-300 transform border rounded-lg hover:bg-gray-50 "
           >
@@ -138,7 +138,7 @@ const Login = () => {
                 Facebook
               </span>
             </div>
-          </button>
+          </button> */}
 
           {/* Google */}
           <button

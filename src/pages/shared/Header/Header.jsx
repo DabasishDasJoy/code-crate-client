@@ -27,7 +27,7 @@ const Header = () => {
       className={`relative shadow z-50  ${
         path === "/"
           ? "bg-[url('https://angfuzsoft.com/wordpress/acadu/wp-content/plugins/acadu-core/assets/img/header_bg_1.png')] text-white"
-          : "text-black bg-white"
+          : "text-[#000A38] bg-white"
       }`}
     >
       <div className="container px-6 py-4 mx-auto ">
@@ -82,7 +82,7 @@ const Header = () => {
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 type="button"
-                className="text-gray-500  hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400"
+                className="text-gray-500  hover:text-gray-600  focus:outline-none focus:text-gray-600 dark:focus:text-gray-400"
                 aria-label="toggle menu"
               >
                 <svg
@@ -123,7 +123,7 @@ const Header = () => {
               !isOpen
                 ? "translate-x-0 opacity-100 "
                 : "opacity-0 -translate-x-full"
-            } absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white dark:bg-gray-800 lg:mt-0 lg:p-0 lg:top-0 lg:relative lg:bg-transparent lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center lg:justify-between flex-1 top-[90px] uppercase font-medium text-sm`}
+            } absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-gray-600 lg:mt-0 lg:p-0 lg:top-0 lg:relative lg:bg-transparent lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center lg:justify-between flex-1 top-[90px] uppercase font-medium text-sm`}
           >
             <div className="flex sm:flex-col-reverse lg:flex-row lg:items-center lg:justify-between lg:w-full">
               <div className="flex flex-col -mx-6 lg:flex-row lg:items-center lg:mx-8">
@@ -221,7 +221,7 @@ const Header = () => {
                   </Link>
                 )}
 
-                <div className="flex items-center gap-2 px-4 py-2 font-medium tracking-wide text-white  transition-colors duration-300 transform bg-[#0D5EF4] rounded-md hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">
+                <div className="flex items-center gap-2 md:px-4 px-0 py-2 font-medium tracking-wide text-white  transition-colors duration-300 transform lg:bg-[#0D5EF4] rounded-md lg:hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">
                   {user && user.uid ? (
                     <button
                       onClick={handleLogout}

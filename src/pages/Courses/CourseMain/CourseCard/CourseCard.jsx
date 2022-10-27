@@ -11,7 +11,7 @@ const CourseCard = ({
 
   return (
     <Link to={`/course/${_id}`} onClick={() => setSelectedCourse(course)}>
-      <div className="w-[350px] h-100 bg-white rounded-lg shadow-lg cursor-pointer relative">
+      <div className=" w-full h-100 bg-white rounded-lg shadow-2xl cursor-pointer relative">
         {ratings > 4 && (
           <div className="absolute top-5 right-5 badge bg-red-600 border-none ">
             Top Rated
@@ -19,7 +19,7 @@ const CourseCard = ({
         )}
         <div className="p-5">
           <img
-            className="object-cover w-full h-40 shadow rounded-lg"
+            className="object-cover w-full md:h-40 h-full shadow rounded-lg"
             src={img_url}
             alt="courseImage"
           />

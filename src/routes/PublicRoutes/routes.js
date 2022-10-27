@@ -11,6 +11,7 @@ import ErrorPage from "../../pages/ErrorPage/ErrorPage";
 import FAQ from "../../pages/FAQ/FAQ";
 import Home from "../../pages/Home/Home";
 import Profile from "../../pages/Profile/Profile";
+import ResetPassword from "../../pages/ResetPassword/ResetPassword";
 import PrivateRoute from "../PrivateRoutes/PrivateRoute";
 
 export const routes = createBrowserRouter([
@@ -76,6 +77,10 @@ export const routes = createBrowserRouter([
       {
         path: "/blog",
         element: <Blog></Blog>,
+      },
+      {
+        path: "/reset",
+        element: <ResetPassword></ResetPassword>,
       },
     ],
   },

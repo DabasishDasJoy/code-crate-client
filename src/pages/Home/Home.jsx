@@ -31,9 +31,9 @@ const Home = () => {
       {/* feature card */}
       <div className="flex md:flex-row flex-col justify-evenly my-10 gap-10 px-10">
         <div
-          className={`max-w-2xl px-8 py-4 bg-white rounded-lg shadow-md  bg-[url('https://i.ibb.co/hZ8wMTD/cta-bg-3.jpg')] bg-cover h-[300px] flex flex-col justify-around items-start gap-5`}
+          className={`max-w-2xl px-8 py-4 rounded-lg shadow-2xl  bg-[url('https://i.ibb.co/hZ8wMTD/cta-bg-3.jpg')] bg-cover h-[300px] flex flex-col justify-around items-start gap-5`}
         >
-          <h1 className="text-black text-2xl font-bold ">
+          <h1 className="text-[#000A38] text-2xl font-bold ">
             Get The Best Courses And Enhance Your Knowledge
           </h1>
           <button className="flex items-center gap-1 px-4 py-2 font-medium tracking-wide text-white  transition-colors duration-300 transform bg-[#0D5EF4] rounded-md hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">
@@ -43,9 +43,9 @@ const Home = () => {
         </div>
 
         <div
-          className={`max-w-2xl px-8 py-4 bg-white rounded-lg shadow-md  bg-[url('https://i.ibb.co/dfdyLRX/cta-bg-2.jpg')] bg-cover h-[300px] flex flex-col justify-around  items-start gap-5`}
+          className={`max-w-2xl px-8 py-4 bg-white rounded-lg shadow-2xl   bg-[url('https://i.ibb.co/dfdyLRX/cta-bg-2.jpg')] bg-cover h-[300px] flex flex-col justify-around  items-start gap-5`}
         >
-          <h1 className="text-black text-2xl font-bold ">
+          <h1 className="text-[#000A38] text-2xl font-bold ">
             Get The Best Courses And Enhance Your Knowledge
           </h1>
           <button className="flex items-center gap-1 px-4 py-2 font-medium tracking-wide text-white  transition-colors duration-300 transform bg-[#0D5EF4] rounded-md hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">

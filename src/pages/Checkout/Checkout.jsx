@@ -1,14 +1,15 @@
 import React, { useContext } from "react";
-import { useLoaderData } from "react-router-dom";
+import { FaArrowLeft } from "react-icons/fa";
+import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 
 const Checkout = () => {
-  const { title, price } = useLoaderData();
+  const { _id, title, price } = useLoaderData();
 
   const { user } = useContext(AuthContext);
   return (
     <div className="flex justify-center items-center">
-      <section className="w-[50%] p-6 mx-auto bg-white rounded-md shadow-md mt-10">
+      <section className="lg:w-[50%] p-6 mx-auto bg-white rounded-md shadow-md mt-10">
         <h2 className="text-center text-3xl font-semibold text-black capitalize mb-5">
           Checkout
         </h2>
@@ -68,10 +69,20 @@ const Checkout = () => {
             </div>
           </div>
 
-          <div className="flex justify-end mt-6">
-            <button className="px-8 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">
+          <div className="flex justify-between mt-6">
+            <Link
+              to={`/course/${_id}`}
+              className="flex items-center gap-2 px-6 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-[#0D5EF4] rounded-md hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80"
+            >
+              <FaArrowLeft></FaArrowLeft>
+              Go Back
+            </Link>
+            <Link
+              to=""
+              className="px-8 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600"
+            >
               Save
-            </button>
+            </Link>
           </div>
         </form>
       </section>
