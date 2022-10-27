@@ -1,13 +1,8 @@
 import React from "react";
 
 const ErrorComponent = ({ message }) => {
-  console.log(
-    "🚀 ~ file: ErrorComponent.jsx ~ line 4 ~ ErrorComponent ~ message",
-    message
-  );
-
   return (
-    <span className="flex gap-2 text-red-500">
+    <span className="flex gap-2 text-red-500 mt-2">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className="stroke-current flex-shrink-0 h-6 w-6"

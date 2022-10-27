@@ -1,7 +1,10 @@
+import { ErrorMessage } from "@hookform/error-message";
 import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
+import ErrorComponent from "../shared/ErrorComponent/ErrorComponent";
 
 const Register = () => {
   const {
@@ -14,12 +17,20 @@ const Register = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
-  const { register, handleSubmit } = useForm({});
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm({
+    criteriaMode: "all",
+  });
 
   const onSubmit = (d) => {
     createUser(d.email, d.password)
       .then((res) => {
-        console.log(res.user);
+        toast.success(`Welcome! You are logged in!`, {
+          position: toast.POSITION.TOP_CENTER,
+        });
         updateProfileOfUser(d.name, d.photoUrl);
         navigate(from, { replace: true });
       })
@@ -27,39 +38,55 @@ const Register = () => {
   };
 
   const updateProfileOfUser = (name, photoUrl) => {
-    console.log(
-      "🚀 ~ file: Register.jsx ~ line 30 ~ updateProfileOfUser ~ PhotoUrl",
-      photoUrl
-    );
-    console.log(
-      "🚀 ~ file: Register.jsx ~ line 30 ~ updateProfileOfUser ~ name",
-      name
-    );
     updateUserProfile(name, photoUrl)
       .then(() => {})
-      .catch((err) => console.error(err));
+      .catch((err) => {
+        toast.success(err.message, {
+          position: toast.POSITION.TOP_CENTER,
+        });
+      });
   };
   const handleFacebookLogin = () => {
     loginWithFacebook()
-      .then(() => {
+      .then((res) => {
+        toast.success(`Welcome! You are logged in!`, {
+          position: toast.POSITION.TOP_CENTER,
+        });
         navigate(from, { replace: true });
       })
-      .catch((err) => console.error(err));
+      .catch((err) => {
+        toast.success(err.message, {
+          position: toast.POSITION.TOP_CENTER,
+        });
+      });
   };
   const handleGoogleLogin = () => {
     loginWithGoogle()
       .then((res) => {
-        console.log(res.user);
+        toast.success(`Welcome! You are logged in!`, {
+          position: toast.POSITION.TOP_CENTER,
+        });
         navigate(from, { replace: true });
       })
-      .catch((err) => console.error(err));
+      .catch((err) => {
+        toast.success(err.message, {
+          position: toast.POSITION.TOP_CENTER,
+        });
+      });
   };
   const handleGithubLogin = () => {
     loginWithGitHub()
-      .then(() => {
+      .then((res) => {
+        toast.success(`Welcome! You are logged in!`, {
+          position: toast.POSITION.TOP_CENTER,
+        });
         navigate(from, { replace: true });
       })
-      .catch((err) => console.error(err));
+      .catch((err) => {
+        toast.success(err.message, {
+          position: toast.POSITION.TOP_CENTER,
+        });
+      });
   };
   return (
     <div className="flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg lg:max-w-4xl my-5">
@@ -70,10 +97,7 @@ const Register = () => {
         }}
       ></div>
 
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        className="w-full px-6 py-8 md:px-8 lg:w-1/2"
-      >
+      <div className="w-full px-6 py-8 md:px-8 lg:w-1/2">
         <h2 className="text-2xl font-semibold text-center text-black uppercase">
           Register
         </h2>
@@ -85,7 +109,7 @@ const Register = () => {
           <span className="w-1/5 border-b  lg:w-1/4"></span>
         </div>
 
-        <div className="flex justify-evenly items-center">
+        <div className="flex justify-between items-center">
           {/* facebook */}
           <button
             onClick={handleFacebookLogin}
@@ -183,86 +207,171 @@ const Register = () => {
 
           <span className="w-1/5 border-b  lg:w-1/4"></span>
         </div>
-        <div className="mt-4">
-          <label
-            className="block mb-2 text-sm font-medium text-black "
-            htmlFor="LoggingName"
-          >
-            Full Name
-          </label>
-          <input
-            id="LoggingName"
-            className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-md   focus:border-blue-400 focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-blue-300"
-            type="text"
-            required
-            {...register("name")}
-          />
-        </div>
-        <div className="mt-4">
-          <label
-            className="block mb-2 text-sm font-medium text-black "
-            htmlFor="LoggingPhotoUrl"
-          >
-            Photo Url
-          </label>
-          <input
-            id="LoggingPhotoUrl"
-            className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-md   focus:border-blue-400 focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-blue-300"
-            type="text"
-            required
-            {...register("photoUrl")}
-          />
-        </div>
-
-        <div className="mt-4">
-          <label
-            className="block mb-2 text-sm font-medium text-black "
-            htmlFor="LoggingEmailAddress"
-          >
-            Email Address
-          </label>
-          <input
-            id="LoggingEmailAddress"
-            className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-md   focus:border-blue-400 focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-blue-300"
-            type="email"
-            required
-            {...register("email")}
-          />
-        </div>
-
-        <div className="mt-4">
-          <div className="flex justify-between">
+        <form onSubmit={handleSubmit(onSubmit)} className="px-2">
+          <div className="mt-4">
             <label
               className="block mb-2 text-sm font-medium text-black "
-              htmlFor="loggingPassword"
+              htmlFor="LoggingName"
             >
-              Password
+              Full Name
             </label>
-            <Link
-              to={"/reset"}
-              className="inline-block mt-4 text-center text-blue-500 md:mt-0 hover:underline dark:text-blue-400"
+            <input
+              id="LoggingName"
+              className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-md   focus:border-blue-400 focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-blue-300"
+              type="text"
+              {...register("name", {
+                required: "This field is required.",
+              })}
+            />
+            <ErrorMessage
+              errors={errors}
+              name="name"
+              render={({ messages }) => {
+                console.log("messages", messages);
+                return messages
+                  ? Object.entries(messages).map(([type, message]) => (
+                      <ErrorComponent
+                        key={type}
+                        message={message}
+                      ></ErrorComponent>
+                    ))
+                  : null;
+              }}
+            />
+          </div>
+          <div className="mt-4">
+            <label
+              className="block mb-2 text-sm font-medium text-black "
+              htmlFor="LoggingPhotoUrl"
             >
-              Forgot Password?
-            </Link>
+              Photo Url
+            </label>
+            <input
+              id="LoggingPhotoUrl"
+              className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-md   focus:border-blue-400 focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-blue-300"
+              type="text"
+              {...register("photoUrl", {
+                required: "This field is required.",
+              })}
+            />
+            <ErrorMessage
+              errors={errors}
+              name="photoUrl"
+              render={({ messages }) => {
+                console.log("messages", messages);
+                return messages
+                  ? Object.entries(messages).map(([type, message]) => (
+                      <ErrorComponent
+                        key={type}
+                        message={message}
+                      ></ErrorComponent>
+                    ))
+                  : null;
+              }}
+            />
           </div>
 
-          <input
-            id="loggingPassword"
-            className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-md    focus:border-blue-400 focus:ring-opacity-40  focus:outline-none focus:ring focus:ring-blue-300"
-            type="password"
-            required
-            {...register("password")}
-          />
-        </div>
+          <div className="mt-4">
+            <label
+              className="block mb-2 text-sm font-medium text-black "
+              htmlFor="LoggingEmailAddress"
+            >
+              Email Address
+            </label>
+            <input
+              id="LoggingEmailAddress"
+              className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-md   focus:border-blue-400 focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-blue-300"
+              type="email"
+              {...register("email", {
+                required: "This input is required.",
+                pattern: {
+                  value: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+                  message: "Invalid email",
+                },
+              })}
+            />
+            <ErrorMessage
+              errors={errors}
+              name="email"
+              render={({ messages }) => {
+                console.log("messages", messages);
+                return messages
+                  ? Object.entries(messages).map(([type, message]) => (
+                      <ErrorComponent
+                        key={type}
+                        message={message}
+                      ></ErrorComponent>
+                    ))
+                  : null;
+              }}
+            />
+          </div>
 
-        <div className="mt-8">
-          <button
-            type="submit"
-            className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-300 transform bg-[#3B82F6] rounded hover:bg-[#2c66c3] focus:outline-none focus:bg-[#3B82F6]"
-          >
-            Create Account
-          </button>
-        </div>
+          <div className="mt-4">
+            <div className="flex justify-between">
+              <label
+                className="block mb-2 text-sm font-medium text-black "
+                htmlFor="loggingPassword"
+              >
+                Password
+              </label>
+              <Link
+                to={"/reset"}
+                className="inline-block mt-4 text-center text-blue-500 md:mt-0 hover:underline dark:text-blue-400"
+              >
+                Forgot Password?
+              </Link>
+            </div>
+
+            <input
+              id="loggingPassword"
+              className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-md    focus:border-blue-400 focus:ring-opacity-40  focus:outline-none focus:ring focus:ring-blue-300"
+              type="password"
+              {...register("password", {
+                required: "This field is required!",
+                validate: {
+                  upperCase: (value) =>
+                    /.*?[A-Z]/.test(value) ||
+                    "At least one uppercase character!",
+                  lowerCase: (value) =>
+                    /.*?[a-z]/.test(value) ||
+                    "At least one lowercase character!",
+                  digit: (value) =>
+                    /.*?[0-9]/.test(value) || "At least one digit",
+                  specialCharacter: (value) =>
+                    /.*?[#?!@$%^&*-]/.test(value) ||
+                    "At least one special character",
+                  minlength: (value) =>
+                    /.{8,}/.test(value) || "Must be 8 characters long",
+                },
+              })}
+            />
+            <ErrorMessage
+              errors={errors}
+              name="password"
+              render={({ messages }) => {
+                console.log("messages", messages);
+                return messages
+                  ? Object.entries(messages).map(([type, message]) => (
+                      <ErrorComponent
+                        key={type}
+                        message={message}
+                      ></ErrorComponent>
+                    ))
+                  : null;
+              }}
+            />
+          </div>
+
+          <div className="mt-8">
+            <button
+              type="submit"
+              className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-300 transform bg-[#3B82F6] rounded hover:bg-[#2c66c3] focus:outline-none focus:bg-[#3B82F6]"
+            >
+              Create Account
+            </button>
+          </div>
+        </form>
         <p className="mt-8 text-xs font-light text-center text-gray-400">
           {" "}
           Already have an account?{" "}
@@ -273,7 +382,7 @@ const Register = () => {
             Login
           </Link>
         </p>
-      </form>
+      </div>
     </div>
   );
 };

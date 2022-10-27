@@ -4,47 +4,33 @@ import { Link } from "react-router-dom";
 const FAQ = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <section className="bg-white dark:bg-gray-900">
+    <section className="bg-white ">
+      <div
+        className={`flex justify-center items-center bg-[url("https://i.ibb.co/tY00ygg/breadcumb-bg.jpg")] py-[100px] w-full bg-cover`}
+      >
+        <h2 className="text-5xl text-white font-semibold uppercase">
+          Have Any questions?
+        </h2>
+      </div>
       <div className="container px-6 py-12 mx-auto">
-        <h1 className="text-2xl font-semibold text-center text-gray-800 lg:text-4xl dark:text-white">
-          Have any Questions?
-        </h1>
-
         <div className="mt-8 xl:mt-16 lg:flex lg:-mx-12">
           <div className="lg:mx-12">
-            <h1 className="text-xl font-semibold text-gray-800 dark:text-white">
-              Table of Content
-            </h1>
+            <h1 className="text-xl font-semibold  ">Table of Content</h1>
 
             <div className="mt-4 space-y-4 lg:mt-8">
-              <Link
-                to={"#"}
-                className="block text-blue-500 dark:text-blue-400 hover:underline"
-              >
+              <Link to={""} className="block text-blue-500 hover:underline">
                 General
               </Link>
-              <Link
-                to={"#"}
-                className="block text-gray-500 dark:text-gray-300 hover:underline"
-              >
+              <Link to={""} className="block text-gray-500  hover:underline">
                 Trust & Safety
               </Link>
-              <Link
-                to={"#"}
-                className="block text-gray-500 dark:text-gray-300 hover:underline"
-              >
+              <Link to={""} className="block text-gray-500  hover:underline">
                 Services
               </Link>
-              <Link
-                to={"#"}
-                className="block text-gray-500 dark:text-gray-300 hover:underline"
-              >
+              <Link to={""} className="block text-gray-500  hover:underline">
                 Billing
               </Link>
-              <Link
-                to={"#"}
-                className="block text-gray-500 dark:text-gray-300 hover:underline"
-              >
+              <Link to={""} className="block text-gray-500  hover:underline">
                 Office Cleaning
               </Link>
             </div>
@@ -82,19 +68,17 @@ const FAQ = () => {
                     d="M12 4v16m8-8H4"
                   />
                 </svg>
-                <h1 className="mx-4 text-xl text-gray-700 dark:text-white">
-                  How i can play for my appoinment ?
+                <h1 className="mx-4 text-xl text-gray-700 ">
+                  How Can I Purchace the Course ?
                 </h1>
               </label>
 
               <div className="flex mt-2 md:mx-10 collapse-content transition delay-75 ease-in-out">
                 <span className="border border-blue-500"></span>
 
-                <p className="max-w-3xl px-4 text-gray-500 dark:text-gray-300">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Magni, eum quae. Harum officiis reprehenderit ex quia ducimus
-                  minima id provident molestias optio nam vel, quidem iure
-                  voluptatem, repellat et ipsa.
+                <p className="max-w-3xl px-4 text-gray-500 ">
+                  Go to courses section. Then select the course and then click
+                  get premium access.
                 </p>
               </div>
             </div>
@@ -131,19 +115,18 @@ const FAQ = () => {
                     d="M12 4v16m8-8H4"
                   />
                 </svg>
-                <h1 className="mx-4 text-xl text-gray-700 dark:text-white">
-                  How i can play for my appoinment ?
+                <h1 className="mx-4 text-xl text-gray-700 ">
+                  How can go get premium access ?
                 </h1>
               </label>
 
               <div className="flex mt-2 md:mx-10 collapse-content transition delay-75 ease-in-out">
                 <span className="border border-blue-500"></span>
 
-                <p className="max-w-3xl px-4 text-gray-500 dark:text-gray-300">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Magni, eum quae. Harum officiis reprehenderit ex quia ducimus
-                  minima id provident molestias optio nam vel, quidem iure
-                  voluptatem, repellat et ipsa.
+                <p className="max-w-3xl px-4 text-gray-500 ">
+                  To get premium access you need to have an account. If you
+                  already have account then login otherwise create a new
+                  account.
                 </p>
               </div>
             </div>
@@ -180,19 +163,17 @@ const FAQ = () => {
                     d="M12 4v16m8-8H4"
                   />
                 </svg>
-                <h1 className="mx-4 text-xl text-gray-700 dark:text-white">
-                  How i can play for my appoinment ?
+                <h1 className="mx-4 text-xl text-gray-700 ">
+                  How can see my profile ?
                 </h1>
               </label>
 
               <div className="flex mt-2 md:mx-10 collapse-content transition delay-75 ease-in-out">
                 <span className="border border-blue-500"></span>
 
-                <p className="max-w-3xl px-4 text-gray-500 dark:text-gray-300">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Magni, eum quae. Harum officiis reprehenderit ex quia ducimus
-                  minima id provident molestias optio nam vel, quidem iure
-                  voluptatem, repellat et ipsa.
+                <p className="max-w-3xl px-4 text-gray-500 ">
+                  Go to your profile avatar then click the avater,it will direct
+                  you to the profile page.
                 </p>
               </div>
             </div>

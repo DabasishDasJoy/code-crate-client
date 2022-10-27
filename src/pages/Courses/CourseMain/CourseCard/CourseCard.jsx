@@ -1,7 +1,7 @@
 import { useContext } from "react";
+import { FaClock } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { CoursesContext } from "../../../../context/CoursesProvider/CoursesProvider";
-
 const CourseCard = ({
   course,
   course: { _id, img_url, title, price, author, ratings },
@@ -29,20 +29,58 @@ const CourseCard = ({
           <div className="flex items-center justify-between">
             <h1 className="text-xl font-bold text-black ">{title}</h1>
             <div className="rating rating-xs rating-half flex items-center">
-              <input type="radio" name="rating-1" className="rating-hidden" />
-              {}
-              <>
+              <div className="rating rating-lg">
                 <input
                   type="radio"
-                  name="rating-1"
-                  className="bg-gray-500 mask mask-star-2 mask-half-1"
+                  name="rating-10"
+                  className="bg-orange-400 mask mask-star-2 mask-half-1"
                 />
                 <input
                   type="radio"
-                  name="rating-1"
-                  className="bg-green-500 mask mask-star-2 mask-half-2"
+                  name="rating-10"
+                  className="bg-orange-400 mask mask-star-2 mask-half-2"
                 />
-              </>
+                <input
+                  type="radio"
+                  name="rating-10"
+                  className="bg-orange-400 mask mask-star-2 mask-half-1"
+                />
+                <input
+                  type="radio"
+                  name="rating-10"
+                  className="bg-orange-400 mask mask-star-2 mask-half-2"
+                />
+                <input
+                  type="radio"
+                  name="rating-10"
+                  className="bg-orange-400 mask mask-star-2 mask-half-1"
+                />
+                <input
+                  type="radio"
+                  name="rating-10"
+                  className="bg-orange-400 mask mask-star-2 mask-half-2"
+                />
+                <input
+                  type="radio"
+                  name="rating-10"
+                  className="bg-orange-400 mask mask-star-2 mask-half-1"
+                />
+                <input
+                  type="radio"
+                  name="rating-10"
+                  className="bg-orange-400 mask mask-star-2 mask-half-2"
+                />
+                <input
+                  type="radio"
+                  name="rating-10"
+                  className="bg-orange-400 mask mask-star-2 mask-half-1"
+                />
+                <input
+                  type="radio"
+                  name="rating-10"
+                  className="bg-orange-400 mask mask-star-2 mask-half-2"
+                />
+              </div>
               <p>({ratings})</p>
             </div>
           </div>
@@ -57,12 +95,14 @@ const CourseCard = ({
               </div>
               <p>{author_name}</p>
             </div>
-            <p className="text-xl font-bold mt-2">{price}</p>
+            <p className="text-xl font-bold mt-2 text-orange-500">{price}</p>
             <hr className="border-dashed mt-5" />
             <div className="flex justify-between mt-2">
               <small>Lessons</small>
               <small>Students</small>
-              <small>17 h 30 m</small>
+              <small className="flex gap-1 items-center">
+                <FaClock className="text-gray-400" /> 17 h 30 m
+              </small>
             </div>
           </div>
         </div>

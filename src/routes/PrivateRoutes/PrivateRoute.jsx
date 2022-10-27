@@ -1,14 +1,10 @@
 import { useContext } from "react";
+import { BallTriangle } from "react-loader-spinner";
 import { Navigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 
 const PrivateRoute = ({ children }) => {
   const { user, loading } = useContext(AuthContext);
-
-  console.log(
-    "🚀 ~ file: PrivateRoute.jsx ~ line 7 ~ PrivateRoute ~ loading",
-    loading
-  );
 
   const location = useLocation();
   console.log(
@@ -17,7 +13,20 @@ const PrivateRoute = ({ children }) => {
   );
 
   if (loading) {
-    return <h1>Loading...</h1>;
+    return (
+      <div className="min-h-screen flex justify-center items-center">
+        <BallTriangle
+          height={100}
+          width={100}
+          radius={5}
+          color="#4fa94d"
+          ariaLabel="ball-triangle-loading"
+          wrapperClass={{}}
+          wrapperStyle=""
+          visible={true}
+        />
+      </div>
+    );
   }
   if (user && user?.uid) {
     return children;

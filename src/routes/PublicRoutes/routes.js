@@ -3,6 +3,7 @@ import CoursesProvider from "../../context/CoursesProvider/CoursesProvider";
 import Main from "../../layouts/Main/Main";
 import Login from "../../pages/Authentication/Login";
 import Register from "../../pages/Authentication/Register";
+import Blog from "../../pages/Blog/Blog";
 import Checkout from "../../pages/Checkout/Checkout";
 import CourseDetails from "../../pages/Courses/CourseDetails/CourseDetails";
 import Courses from "../../pages/Courses/Courses";
@@ -15,14 +16,8 @@ import PrivateRoute from "../PrivateRoutes/PrivateRoute";
 export const routes = createBrowserRouter([
   {
     path: "/",
-    loader: () => {
-      return fetch("https://code-crate-server.vercel.app/courses");
-    },
-    element: (
-      <CoursesProvider>
-        <Main></Main>
-      </CoursesProvider>
-    ),
+
+    element: <Main></Main>,
     errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
@@ -31,8 +26,14 @@ export const routes = createBrowserRouter([
       },
       {
         path: "/courses",
-
-        element: <Courses></Courses>,
+        loader: () => {
+          return fetch("https://code-crate-server.vercel.app/courses");
+        },
+        element: (
+          <CoursesProvider>
+            <Courses></Courses>
+          </CoursesProvider>
+        ),
       },
       {
         path: "/login",
@@ -52,7 +53,12 @@ export const routes = createBrowserRouter([
         element: <CourseDetails></CourseDetails>,
       },
       {
-        path: "/checkout",
+        path: "/checkout/:id",
+        loader: ({ params }) => {
+          return fetch(
+            `https://code-crate-server.vercel.app/courses/${params.id}`
+          );
+        },
         element: (
           <PrivateRoute>
             <Checkout></Checkout>
@@ -66,6 +72,10 @@ export const routes = createBrowserRouter([
       {
         path: "/userProfile",
         element: <Profile></Profile>,
+      },
+      {
+        path: "/blog",
+        element: <Blog></Blog>,
       },
     ],
   },

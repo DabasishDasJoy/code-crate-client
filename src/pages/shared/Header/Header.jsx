@@ -129,19 +129,43 @@ const Header = () => {
               <div className="flex flex-col -mx-6 lg:flex-row lg:items-center lg:mx-8">
                 <NavLink
                   to={"/courses"}
-                  className="px-3 py-2 mx-3 mt-2  transition-colors duration-300 transform rounded-md lg:mt-0  hover:bg-gray-100 dark:hover:bg-gray-700"
+                  className="px-3 py-2 mx-3 mt-2  transition-colors duration-300 transform  lg:mt-0  hover:text-[#3B82F6] "
+                  style={({ isActive }) =>
+                    isActive
+                      ? {
+                          color: "blue",
+                          borderBottom: "2px solid blue",
+                        }
+                      : undefined
+                  }
                 >
                   Courses
                 </NavLink>
                 <NavLink
                   to={"/faq"}
-                  className="px-3 py-2 mx-3 mt-2  transition-colors duration-300 transform rounded-md lg:mt-0  hover:bg-gray-100 dark:hover:bg-gray-700"
+                  className="px-3 py-2 mx-3 mt-2  transition-colors duration-300 transform lg:mt-0  hover:text-[#3B82F6]"
+                  style={({ isActive }) =>
+                    isActive
+                      ? {
+                          color: "blue",
+                          borderBottom: "2px solid blue",
+                        }
+                      : undefined
+                  }
                 >
                   FAQ
                 </NavLink>
                 <NavLink
                   to={"/blog"}
-                  className="px-3 py-2 mx-3 mt-2  transition-colors duration-300 transform rounded-md lg:mt-0  hover:bg-gray-100 dark:hover:bg-gray-700"
+                  className="px-3 py-2 mx-3 mt-2  transition-colors duration-300 transform  lg:mt-0  hover:text-[#3B82F6] "
+                  style={({ isActive }) =>
+                    isActive
+                      ? {
+                          color: "blue",
+                          borderBottom: "2px solid blue",
+                        }
+                      : undefined
+                  }
                 >
                   Blog
                 </NavLink>
