@@ -236,7 +236,6 @@ const Register = () => {
               errors={errors}
               name="name"
               render={({ messages }) => {
-                console.log("messages", messages);
                 return messages
                   ? Object.entries(messages).map(([type, message]) => (
                       <ErrorComponent
@@ -268,7 +267,6 @@ const Register = () => {
               errors={errors}
               name="photoUrl"
               render={({ messages }) => {
-                console.log("messages", messages);
                 return messages
                   ? Object.entries(messages).map(([type, message]) => (
                       <ErrorComponent
@@ -305,7 +303,6 @@ const Register = () => {
               errors={errors}
               name="email"
               render={({ messages }) => {
-                console.log("messages", messages);
                 return messages
                   ? Object.entries(messages).map(([type, message]) => (
                       <ErrorComponent
@@ -356,7 +353,6 @@ const Register = () => {
               errors={errors}
               name="password"
               render={({ messages }) => {
-                console.log("messages", messages);
                 return messages
                   ? Object.entries(messages).map(([type, message]) => (
                       <ErrorComponent

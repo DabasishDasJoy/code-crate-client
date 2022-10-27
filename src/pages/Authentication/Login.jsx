@@ -36,7 +36,6 @@ const Login = () => {
         });
       });
   };
-  console.log(errors);
 
   // const handleFacebookLogin = () => {
   //   loginWithFacebook()
@@ -224,7 +223,6 @@ const Login = () => {
               errors={errors}
               name="email"
               render={({ messages }) => {
-                console.log("messages", messages);
                 return messages
                   ? Object.entries(messages).map(([type, message]) => (
                       <ErrorComponent
@@ -280,7 +278,6 @@ const Login = () => {
               errors={errors}
               name="password"
               render={({ messages }) => {
-                console.log("messages", messages);
                 return messages
                   ? Object.entries(messages).map(([type, message]) => (
                       <ErrorComponent
